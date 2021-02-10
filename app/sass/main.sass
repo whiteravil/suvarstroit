@@ -1,0 +1,117 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+@import "_mixins/mixins"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $red
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.375
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+
+b, strong
+	font-weight: bold
+
+.container
+	padding: 0 40px
+	width: 1920px
+	max-width: 100%
+	margin-left: auto
+	margin-right: auto
+
+.header
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 5
+	padding: 38px 0
+
+.header-row
+	display: flex
+	align-items: center
+
+.header-logo
+	padding-right: 30px
+	width: 25%
+	flex-shrink: 0
+
+.logo
+	display: block
+	img
+		display: block
+		width: 198px
+
+.header-phone
+	width: 37.5%
+	padding-right: 30px
+	a
+		display: inline-block
+		color: #fff
+		+tr
+		font-weight: 500
+		font-size: 20px
+		text-decoration: none !important
+		margin-bottom: 5px
+		&:hover
+			color: $red
+	p
+		margin: 0
+		color: rgba(#fff, .5)
+
+.main-menu
+	margin-left: auto
+	display: flex
+	align-items: center
+
+.menu-link
+	+tr
+	color: #fff
+	text-decoration: none !important
+	margin-right: 20px
+	font-weight: 500
+	&:last-child
+		margin-right: 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-window
+	height: 100vh
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))
+
+
+@import "media" // Always at the end
