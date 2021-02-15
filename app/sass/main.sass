@@ -21,6 +21,9 @@ body
 	overflow-x: hidden
 	color: $text
 	font-weight: 500
+	&.no-scroll
+		overflow: hidden
+		touch-action: none
 
 b, strong
 	font-weight: bold
@@ -75,7 +78,9 @@ section
 		align-items: center
 		span
 			margin-right: rem(12px)
-			font-size: rem(11px)
+			font-size: rem(16px)
+			&.icon-plus
+				font-size: rem(11px)
 	&.btn-white-border
 		background-color: transparent
 		border: 1px solid #fff
@@ -83,6 +88,11 @@ section
 		&:hover
 			border-color: $red
 			background-color: $red
+	&.btn-gray
+		background-color: #F2F2F2
+		color: $text
+		&:hover
+			background-color: #dcdcdc
 
 .container
 	padding: 0 rem(40px)
@@ -289,7 +299,7 @@ section
 			+tr
 
 .main-window-slider-block
-	max-width: 595px
+	max-width: rem(595px)
 	position: relative
 	.slick-slide
 		transform: translateX(30px)
@@ -331,10 +341,11 @@ section
 	color: $text !important
 	&:hover
 		span
-			transform: translateX(#{rem(3px)})
+			transform: translateX(#{rem(5px)})
 	span
 		font-size: rem(11px)
 		margin-left: rem(6px)
+		margin-top: rem(1px)
 		+tr
 	&.white
 		color: #fff !important
@@ -688,7 +699,7 @@ section
 		margin: 0
 
 .s-stocks
-	padding: 70px 0
+	padding: rem(70px) 0
 	background-color: #F2F2F2
 
 .stocks-left
@@ -698,7 +709,7 @@ section
 	z-index: 1
 
 .stocks-title
-	margin-bottom: 40px
+	margin-bottom: rem(40px)
 
 .stocks-nav
 	display: flex
@@ -710,7 +721,7 @@ section
 		bottom: auto !important
 		right: auto !important
 	.slider-prev
-		margin-right: 12px
+		margin-right: rem(12px)
 
 .slick-track
 	display: flex
@@ -723,12 +734,12 @@ section
 .news-slider
 	.slick-list
 		overflow: visible
-		margin-left: -15px
-		margin-right: -15px
+		margin-left: -#{rem(15px)}
+		margin-right: -#{rem(15px)}
 	.slick-slide
 		opacity: 0
 		transition: all .4s ease
-		padding: 0 15px
+		padding: 0 rem(15px)
 		&.slick-active
 			opacity: 1
 			& + .slick-slide
@@ -741,10 +752,10 @@ section
 	position: relative
 	z-index: 1
 	overflow: hidden
-	border-radius: 6px
-	min-height: 190px
+	border-radius: rem(6px)
+	min-height: rem(190px)
 	align-items: flex-start
-	padding: 32px 32px 23px
+	padding: rem(32px) rem(32px) rem(23px)
 	&:after
 		content: ''
 		position: absolute
@@ -797,19 +808,660 @@ section
 
 .stick
 	display: inline-block
-	height: 30px
+	height: rem(30px)
 	position: relative
 	z-index: 2
 	margin-bottom: auto
-	border-radius: 4px
+	border-radius: rem(4px)
 	background-color: #fff
-	padding: 0 9px
+	padding: 0 rem(9px)
 	white-space: nowrap
-	font-size: 13px
+	font-size: rem(13px)
 	font-weight: 500
-	line-height: 30px
+	line-height: rem(30px)
+	color: $text
 
 .news-date
 	color: #9595A2
+
+.s-about
+	padding: rem(85px) 0 rem(72px)
+
+.about-title
+	font-size: rem(32px)
+	font-weight: normal
+	> span
+		font-weight: bold
+		display: block
+	.color
+		color: $red
+	&:after
+		content: '\e915'
+		font-family: icon
+		color: $red
+		font-size: rem(18px)
+		display: inline-block
+		margin-left: rem(8px)
+		transform: rotate(-45deg)
+
+.video-block
+	position: relative
+	padding-bottom: 56.25%
+	border-radius: rem(6px)
+	overflow: hidden
+	&:hover
+		.video-poster
+			img
+				transform: scale(1.1)
+
+.video-poster
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	border-radius: rem(6px)
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(#000, .28)
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+		border-radius: rem(6px)
+		+tr
+
+.video-play
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	height: rem(69px)
+	width: rem(69px)
+	background-color: #fff
+	border-radius: 50%
+	display: flex
+	align-items: center
+	justify-content: center
+	cursor: pointer
+	z-index: 1
+	+tr
+	&:after
+		content: '\e906'
+		font-family: icon
+		font-size: rem(27px)
+		color: $red
+		display: inline-block
+		transform: translateX(3px)
+
+.about-blockquote
+	margin-left: rem(38px)
+
+.blockqute-content
+	margin-bottom: rem(30px)
+	font-size: rem(24px)
+	font-weight: normal
+
+.blockqute-author
+	display: flex
+	align-items: center
+
+.blockqute-author-img
+	position: relative
+	margin-right: rem(25px)
+	img
+		width: rem(139px)
+		height: rem(139px)
+	&:after
+		content: '\e908'
+		position: absolute
+		top: 0
+		left: 0
+		width: rem(44px)
+		height: rem(44px)
+		border-radius: 50%
+		background-color: $text
+		color: #fff
+		font-family: icon
+		font-size: rem(13px)
+		line-height: rem(44px)
+		text-align: center
+
+.blockqute-author-text
+	.h5
+		margin-bottom: rem(4px)
+	p
+		color: #9595A1
+		font-weight: normal
+		margin: 0
+
+.about-in-nmbrs
+	display: flex
+	margin-left: calc(25% + 5px)
+	margin-top: rem(77px)
+
+.about-in-nmbrs-item
+	margin-right: rem(65px)
+	font-weight: normal
+	max-width: rem(124px)
+	img
+		width: rem(124px)
+	span
+		font-weight: bold
+		display: block
+		margin-bottom: rem(3px)
+		font-size: rem(38px)
+		letter-spacing: -.03rem
+		line-height: 1
+		padding-top: rem(16px)
+		white-space: nowrap
+
+.about-in-nmbrs-link
+	margin-top: rem(38px)
+	margin-left: auto
+
+.popup-wrapper
+	position: fixed
+	z-index: 100
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	display: none
+	&.opened
+		.popup-flex
+			background-color: rgba(#171723, .8)
+		.popup-block
+			transform: none
+			opacity: 1
+
+.popup-flex
+	display: flex
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: rgba(#171723, 0)
+	transition: background-color .4s ease
+	overflow-y: auto
+
+.popup-close
+	width: 21px
+	height: 21px
+	margin-left: auto
+	text-align: center
+	color: #fff
+	cursor: pointer
+	margin-bottom: 34px
+	+tr
+	&:hover
+		transform: scale(1.2)
+	&:after
+		content: '\e918'
+		font-family: icon
+		font-size: 21px
+		font-weight: normal
+		line-height: 21px
+
+.popup-block
+	margin: auto
+	width: 625px
+	max-width: 100%
+	transition: all .4s ease
+	transform: translateY(-50px)
+	opacity: 0
+
+#video-popup
+	.popup-block
+		width: calc(80vw)
+
+.video-popup-block
+	position: relative
+	padding-bottom: 56.25%
+	border-radius: 10px
+	overflow: hidden
+	iframe
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		border-radius: 10px
+
+.s-text-slider
+	margin: rem(60px) 0
+	position: relative
+	height: rem(80px)
+	overflow: hidden
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		z-index: 2
+
+.text-slider-wrapper
+	transition: transform 2.5s ease
+
+.text-slider
+	display: flex
+	align-items: center
+
+.text-slider-item
+	white-space: nowrap
+	line-height: 1
+	font-size: rem(80px)
+	font-weight: normal
+	display: inline-flex !important
+	align-items: center
+	&:after
+		content: ''
+		display: block
+		height: 1px
+		background-color: $text
+		width: rem(243px)
+		flex-shrink: 0
+		margin: 0 rem(45px)
+		transform: translateY(#{rem(7px)})
+
+.text-slider
+	.slick-list
+		overflow: visible
+
+.s-city-map
+	margin-bottom: rem(75px)
+	overflow: visible
+
+.city-map-wrapper
+	position: relative
+
+.city-map-img
+	position: relative
+	border-radius: rem(6px)
+	overflow: hidden
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(#000, .3)
+		border-radius: rem(6px)
+	img
+		width: 100%
+		display: block
+		border-radius: rem(6px)
+
+.city-map-title
+	position: absolute
+	bottom: 0
+	left: 0
+	width: 100%
+	z-index: 1
+	color: #fff
+	.row
+		align-items: flex-end
+	.section-nmb
+		padding-left: rem(57px)
+		padding: rem(45px)
+	.map-title
+		padding-bottom: rem(45px)
+
+.section-nmb
+	font-size: rem(80px)
+	line-height: 1
+	font-weight: 300
+
+.map-title
+	font-size: rem(52px)
+
+.city-map-dots-item
+	position: absolute
+	z-index: 2
+	&:hover
+		.city-map-dots-icon
+			color: rgba(#fff, 0)
+			span
+				transform: rotate(-45deg)
+		.city-map-dots-content
+			opacity: 1
+			visibility: visible
+			transform: none
+
+.city-map-dots-icon
+	display: flex
+	align-items: center
+	color: #fff
+	transition: color .3s ease
+	cursor: pointer
+	span
+		width: rem(50px)
+		height: rem(50px)
+		background-color: #fff
+		position: relative
+		z-index: 3
+		flex-shrink: 0
+		border-radius: 50%
+		margin-right: rem(17px)
+		+tr
+		&:after,
+		&:before
+			content: ''
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			background-color: $text
+		&:after
+			width: rem(2px)
+			height: rem(22px)
+		&:before
+			height: rem(2px)
+			width: rem(22px)
+
+.city-map-dots-content
+	position: absolute
+	top: -20px
+	left: -20px
+	width: rem(370px)
+	background-color: #fff
+	visibility: hidden
+	transition: all .3s ease
+	opacity: 0
+	transform-origin: top left
+	transform: scale(0.75)
+	border-radius: rem(10px)
+	overflow: hidden
+	padding: 0 rem(20px) rem(20px)
+	box-shadow: 0 0 21px 0 rgba(#000, .15)
+	img
+		width: calc(100% + #{rem(40px)})
+		margin-bottom: rem(20px)
+		margin-left: -#{rem(20px)}
+	.h5
+		margin-bottom: rem(15px)
+	p
+		margin-bottom: rem(8px)
+	.link-angle
+		margin-top: rem(25px)
+
+.city-map-dots-item-small
+	padding-left: rem(39px)
+	position: relative
+	color: #fff
+	&:after
+		content: ''
+		width: rem(22px)
+		height: rem(22px)
+		border-radius: 50%
+		background-color: #fff
+		flex-shrink: 0
+		position: absolute
+		top: 0
+		left: 0
+
+.city-map-open-full
+	position: absolute
+	z-index: 4
+	top: rem(40px)
+	right: rem(40px)
+
+.s-projects
+	overflow: visible
+
+.location-nav
+	padding-left: rem(68px)
+	.h6
+		text-transform: uppercase
+		font-size: rem(10px)
+		color: #9595A2
+		margin-bottom: rem(18px)
+		margin-top: rem(30px)
+		&:first-child
+			margin-top: 0
+
+.location-nav-link
+	margin-bottom: rem(6px)
+	a
+		display: inline-block
+		+tr
+		color: $text
+		position: relative
+		text-decoration: none !important
+		&:after
+			content: ''
+			position: absolute
+			left: -#{rem(17px)}
+			border-radius: 50%
+			width: rem(7px)
+			height: rem(7px)
+			background-color: $red
+			top: rem(7px)
+			+tr
+			transform: translateX(#{rem(17px)})
+			opacity: 0
+			+tr
+		&:hover,
+		&.active
+			color: $red
+			&:after
+				opacity: 1
+				transform: none
+
+.projects-header
+	margin-bottom: rem(75px)
+	display: flex
+
+.projects-header-left
+	width: 70%
+	flex-shrink: 0
+	padding-right: 20px
+	.h3
+		max-width: rem(702px)
+
+.projects-header-right
+	width: 30%
+	flex-shrink: 0
+	ul
+		list-style-type: none
+		padding: 0
+		margin: 0 0 rem(35px)
+		font-size: rem(20px)
+		li
+			margin-bottom: rem(15px)
+			span
+				font-weight: bold
+			&:last-child
+				margin-bottom: 0
+
+.projects-header-right-btns
+	display: flex
+	.btn
+		margin-right: rem(20px)
+		&:last-child
+			margin-right: 0
+
+.project
+	margin-bottom: rem(35px)
+	&:hover
+		.project-header
+			img
+				transform: scale(1.1)
+
+.project-header
+	position: relative
+	margin-bottom: rem(12px)
+	display: flex
+	flex-direction: column
+	justify-content: flex-end
+	overflow: hidden
+	padding: rem(20px) rem(24px)
+	height: rem(360px)
+	border-radius: rem(7px)
+	color: #fff
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		border-radius: rem(7px)
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.2))
+		z-index: -1
+	img
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		border-radius: rem(7px)
+		+tr
+		z-index: -2
+	.stick
+		position: absolute
+		top: rem(24px)
+		left: rem(24px)
+
+.project-map-link
+	position: absolute
+	top: rem(24px)
+	right: rem(24px)
+	white-space: nowrap
+	height: rem(30px)
+	z-index: 1
+	+tr
+	display: inline-flex
+	align-items: center
+	padding: 0 rem(10px) 0 rem(12px)
+	font-size: rem(13px)
+	color: #fff !important
+	text-decoration: none !important
+	border: 1px solid #fff
+	border-radius: rem(7px)
+	span
+		font-size: rem(16px)
+		margin-right: rem(6px)
+	&:hover
+		background-color: $red
+		border-color: $red
+
+.project-title
+	max-width: rem(400px)
+	.h3
+		margin-bottom: rem(10px)
+	p
+		margin: 0
+
+.project-descr
+	display: flex
+	margin-bottom: rem(19px)
+
+.project-descr-left
+	padding-right: rem(20px)
+	flex-grow: 1
+	p
+		color: #9595A2
+		font-weight: normal
+		margin-bottom: rem(10px)
+
+.project-distance
+	display: flex
+	color: $gray
+	font-size: rem(12px)
+	span
+		font-size: rem(16px)
+		margin-right: rem(6px)
+
+.project-descr-right
+	text-align: right
+
+.project-price
+	display: inline-flex
+	align-items: center
+	margin-bottom: rem(5px)
+
+.project-price-val
+	font-size: rem(20px)
+
+.project-price-info
+	position: relative
+
+.project-price-info-icon
+	cursor: pointer
+	color: $gray
+	margin-left: rem(10px)
+	display: flex
+	margin-top: -1px
+	&:hover
+		& ~ .project-price-info-dropdown
+			opacity: 1
+			visibility: visible
+			transform: translateY(0)
+
+.project-price-info-dropdown
+	position: absolute
+	min-width: rem(327px)
+	bottom: rem(27px)
+	left: -#{rem(8px)}
+	z-index: 5
+	background-color: #fff
+	box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1)
+	border-radius: rem(7px)
+	padding: rem(23px) rem(18px) rem(18px) rem(20px)
+	text-align: left
+	transition: all .4s ease
+	visibility: hidden
+	opacity: 0
+	transform: translateY(-20px)
+	&.right-position
+		left: auto
+		right: -#{rem(8px)}
+	ul
+		list-style-type: none
+		padding: 0
+		margin: 0
+		li
+			display: flex
+			justify-content: space-between
+			margin-bottom: rem(10px)
+			&:last-child
+				margin-bottom: 0
+			span
+				&:first-child
+					margin-right: rem(15px)
+				&:last-child
+					font-weight: 600
+
+.project-size
+	color: $gray
+	font-weight: normal
+
+.project-footer
+	display: flex
+	flex-wrap: wrap
+
+.label
+	margin: 0 rem(10px) rem(10px) 0
+	white-space: nowrap
+	height: rem(30px)
+	line-height: rem(30px)
+	padding: 0 rem(9px)
+	border-radius: rem(4px)
+	background-color: #F2F2F2
+	color: $gray
+	font-weight: normal
+	&.red
+		background-color: #FDE3E3
+		color: $red
 
 @import "media" // Always at the end
