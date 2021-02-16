@@ -95,6 +95,7 @@ $(function() {
 	});
 
 	$('.filter-range').each(function() {
+
 		let ths = $(this),
 				inpFrom = ths.find('.filter-range-input.from'),
 				inpTo = ths.find('.filter-range-input.to'),
@@ -135,7 +136,7 @@ $(function() {
 
 	$('.select-style').select2({
 		minimumResultsForSearch: -1,
-		width: '100%'
+		width: '100%',
 	});
 
 	let unhoverBannerTimeout;
@@ -210,12 +211,6 @@ $(function() {
   	});
   });
 
-  let scrollTextArr = [];
-
-  $('.s-text-slider').each(function() {
-  	scrollTextArr.push(0);
-  });
-
   $('.text-slider').slick({
   	infinite: true,
   	arrows: false,
@@ -230,27 +225,24 @@ $(function() {
 
   let canTextAnimate = true;
 
-  function scrollText() {
-  	if ( canTextAnimate ) {
-  		canTextAnimate = false;
-  		$('.text-slider-wrapper').each(function() {
-  			let ths = $(this);
-	  			ths.css({
-		  		'transform': `translate3d(${-ths.find('.text-slider-item').eq(0).outerWidth()}px, 0, 0)`
-		  	})
-		  	setTimeout(() => {
-		  		ths.css({
-		  			'transition': 'all 0s ease',
-		  			'transform': `translate3d(0, 0, 0)`
-		  		})
-		  	}, 2500)
-		  	setTimeout(() => {
-		  		ths.attr('style', '')
-		  		canTextAnimate = true
-		  	}, 2550)
-  		})
-  	}
-  }
+  // function scrollText(slider) {
+  // 	if ( canTextAnimate && $(window).scrollTop() > slider.offset().top - $(window).height() ) {
+  // 		canTextAnimate = false;
+  // 		slider.css({
+	 //  		'transform': `translate3d(${-slider.find('.text-slider-item').eq(0).outerWidth()}px, 0, 0)`
+	 //  	})
+	 //  	setTimeout(() => {
+	 //  		slider.css({
+	 //  			'transition': 'all 0s ease',
+	 //  			'transform': `translate3d(0, 0, 0)`
+	 //  		})
+	 //  	}, 2500)
+	 //  	setTimeout(() => {
+	 //  		slider.attr('style', '')
+	 //  		canTextAnimate = true
+	 //  	}, 2550)
+  // 	}
+  // }
 
   function projectHelpInfoPosition() {
   	$('.project-price-info-dropdown').each(function() {
@@ -264,15 +256,106 @@ $(function() {
   	});
   }
 
+  function advantageHeight() {
+  	$('.advantages-item.type-2').each(function() {
+  		let ths = $(this),
+  				thsBody = ths.find('.advantages-body'),
+  				translateHeight = thsBody.outerHeight() - thsBody.find('.h4').outerHeight(true);
+  		thsBody.css('transform', `translateY(${translateHeight}px)`);
+  	});
+  }advantageHeight();
+
+  let layoutImages = $('.layout-image');
+  layoutImages.slick({
+  	slidesToShow: 1,
+		arrows: false,
+		dots: false,
+		loop: true,
+		fade: true,
+		adaptiveHeight: true
+  });
+
+  let layoutInfo = $('.layout-info-slider');
+  layoutInfo.slick({
+  	slidesToShow: 1,
+		arrows: false,
+		dots: false,
+		loop: true,
+		fade: true,
+		adaptiveHeight: true
+  });
+
+  $('.select-layout-item').on('click', function() {
+  	let ths = $(this);
+  	if ( !ths.hasClass('active') ) {
+  		let dataAttr = ths.data('for'),
+  				i = parseInt($(`.layout-image img[data-img=${dataAttr}]`).parents('.slick-slide').data('slick-index'));
+  		$('.select-layout-item').removeClass('active');
+  		ths.addClass('active');
+  		$('.select-layout-border').css('transform', `translate(${ths.position().left}px, ${ths.position().top}px)`);
+  		layoutImages.slick('slickGoTo', i);
+  		layoutInfo.slick('slickGoTo', i);
+  	}
+  });
+
+  let calcLoaderTimeout;
+
+	function calculatorLoader() {
+		clearTimeout(calcLoaderTimeout);
+		$('.calcultator-total-price').addClass('loading');
+		calcLoaderTimeout = setTimeout(() => {
+			$('.calcultator-total-price').removeClass('loading');
+		}, 1500);
+	}
+
+  $('.filter-range-solo').each(function() {
+		let ths = $(this),
+				inp = ths.find('.form-control'),
+				val = inp.val(),
+				range = ths.find('.filter-range-slider')[0],
+				rangeStepData = ths.find('.filter-range-slider').data('step'),
+				min = ths.find('.filter-range-slider').data('min'),
+				max = ths.find('.filter-range-slider').data('max'),
+				options = {
+					start: parseFloat(val),
+					connect: [true, false],
+					range: {
+						min: parseFloat(min),
+						max: parseFloat(max)
+					}
+				};
+
+		rangeStepData !== undefined ? options.step = parseFloat(rangeStepData) : options = options;
+
+		noUiSlider.create(range, options);
+
+		range.noUiSlider.on('update', function (values, handle) {
+			parseFloat(values[0]) == parseInt(values[0]) ? values[0] = parseInt(values[0]) : values[0] = parseFloat(values[0]);
+			inp.val(values[0]);
+			inp.parents('.calculator-form').length > 0 ? calculatorLoader() : '';
+		});
+
+		inp.on('input', function() {
+			range.noUiSlider.setHandle(null, parseFloat($(this).val()))
+		});
+
+	});
+
+	$('.calculator-form input').on('input', calculatorLoader);
+	$('.calculator-form select').on('change', calculatorLoader);
+
   $(window)
-  .on('scroll', function() {
-  	scrollText()
-  })
+  // .on('scroll', function() {
+  // 	$('.text-slider-wrapper').each(function() {
+  // 		scrollText($(this))
+  // 	})
+  // })
   .on('load', function() {
   	projectHelpInfoPosition()
   })
   .on('resize', function() {
-  	projectHelpInfoPosition()
+  	projectHelpInfoPosition();
+  	advantageHeight();
   });
 
 });

@@ -34,10 +34,15 @@ h2, .h2
 	line-height: 1.175
 
 h3, .h3
-	font-size: 32px
+	font-size: rem(32px)
 	font-weight: normal
 	line-height: 1.1875
 	font-weight: 500
+
+h4, .h4
+	font-size: rem(24px)
+	font-weight: 500
+	line-height: 1.2
 
 h5, .h5
 	font-weight: 500
@@ -93,6 +98,18 @@ section
 		color: $text
 		&:hover
 			background-color: #dcdcdc
+	&.btn-block
+		display: block
+		width: 100%
+	&.btn-border
+		background-color: transparent
+		border: 1px solid #9595A1
+		line-height: rem(54px)
+		color: $text
+		&:hover
+			border-color: $red
+			color: #fff
+			background-color: $red
 
 .container
 	padding: 0 rem(40px)
@@ -445,9 +462,12 @@ section
 	color: #fff
 	border-top: 1px solid rgba(#fff, .15)
 	padding: rem(35px) 0 rem(42px)
+	.filter-item
+		margin-bottom: 0
 
 .filter-item
 	margin-right: rem(20px)
+	margin-bottom: rem(45px)
 
 .filter-title
 	margin-bottom: rem(15px)
@@ -820,6 +840,12 @@ section
 	font-weight: 500
 	line-height: rem(30px)
 	color: $text
+	&.black
+		background-color: #171723
+		color: #fff
+	&.red
+		background-color: $red
+		color: #fff
 
 .news-date
 	color: #9595A2
@@ -1120,6 +1146,9 @@ section
 	font-size: rem(80px)
 	line-height: 1
 	font-weight: 300
+	&.big
+		font-size: rem(190px)
+		line-height: 0.75
 
 .map-title
 	font-size: rem(52px)
@@ -1217,9 +1246,12 @@ section
 
 .s-projects
 	overflow: visible
+	padding-bottom: rem(48px)
 
 .location-nav
 	padding-left: rem(68px)
+	position: sticky
+	top: rem(30px)
 	.h6
 		text-transform: uppercase
 		font-size: rem(10px)
@@ -1308,6 +1340,7 @@ section
 	height: rem(360px)
 	border-radius: rem(7px)
 	color: #fff
+	z-index: 1
 	&:after
 		content: ''
 		position: absolute
@@ -1324,6 +1357,7 @@ section
 		left: 0
 		width: 100%
 		height: 100%
+		object-fit: cover
 		border-radius: rem(7px)
 		+tr
 		z-index: -2
@@ -1446,7 +1480,7 @@ section
 	color: $gray
 	font-weight: normal
 
-.project-footer
+.project-labels
 	display: flex
 	flex-wrap: wrap
 
@@ -1460,8 +1494,584 @@ section
 	background-color: #F2F2F2
 	color: $gray
 	font-weight: normal
+	font-size: rem(14px)
 	&.red
-		background-color: #FDE3E3
+		background-color: #FDE3E3 !important
 		color: $red
+
+.project--big
+	display: flex
+	margin-top: rem(48px)
+	.project-header
+		width: 56%
+		flex-shrink: 0
+		height: auto
+		padding: 0
+		margin: 0
+		img
+			position: static
+	.project-body
+		flex-shrink: 0
+		width: 44%
+		padding-left: rem(49px)
+		display: flex
+		flex-direction: column
+	.project-title
+		margin-bottom: rem(25px)
+		.h3
+			margin-bottom: rem(25px)
+	.project-descr-left
+		padding-right: 0
+		flex-grow: 0
+		margin-bottom: rem(35px)
+	.project-labels
+		margin-bottom: rem(20px)
+		margin-top: 0
+	.project-descr-right
+		margin-top: auto
+		text-align: left
+
+.bg-gray
+	padding-top: rem(54px)
+	background-color: #F2F2F2
+	.label
+		background-color: #fff
+
+.bg-linear-gray
+	background: linear-gradient(180deg, #FFFFFF 64.15%, #F2F2F2 118.43%)
+	padding-top: rem(54px)
+
+.s-layouts
+	padding: rem(80px) 0 rem(53px)
+
+.layouts-header
+	position: relative
+	margin-bottom: rem(60px)
+	&:after
+		content: ''
+		position: absolute
+		bottom: 0
+		left: 0
+		height: 3px
+		background-color: #F2F2F2
+		width: 100%
+
+.layouts-filter
+	.h2
+		margin-bottom: rem(43px)
+
+.layouts-filter-nav
+	display: flex
+
+.layouts-filter-nav-link
+	color: $text
+	+tr
+	text-decoration: none !important
+	display: inline-block
+	position: relative
+	padding-bottom: 26px
+	z-index: 1
+	margin-right: 30px
+	&:last-child
+		margin-right: 0
+	&:after
+		content: ''
+		position: absolute
+		bottom: 0
+		left: 0
+		height: 3px
+		background-color: $red
+		width: 100%
+		transform: scaleX(0)
+	&:hover
+		color: $red
+	&.active
+		color: $red
+		&:after
+			transform: scaleX(1)
+	span
+		top: -.5em
+		text-transform: uppercase
+		color: $red
+		position: relative
+		font-size: 75%
+		line-height: 0
+		vertical-align: baseline
+		margin-left: rem(3px)
+
+.select-layout-wrapper
+	text-align: center
+
+.select-layout-grid
+	display: inline-grid
+	grid-template-columns: repeat(3, 1fr)
+	grid-gap: rem(50px) rem(17px)
+	margin-left: auto
+	margin-right: auto
+	text-align: left
+	position: relative
+
+.select-layout-border
+	position: absolute
+	top: 0
+	left: 0
+	border-radius: rem(7px)
+	border: 1px solid $red
+	z-index: 1
+	width: rem(80px)
+	height: rem(80px)
+	transition: transform .4s ease
+
+.select-layout-item
+	text-align: center
+	cursor: pointer
+	&.active
+		.select-layout-item-img
+			&:after
+				opacity: 1
+				transform: scale(1)
+	&:hover
+		.select-layout-item-img
+			img
+				transform: scale(1.1)
+
+.select-layout-item-img
+	display: flex
+	width: rem(80px)
+	height: rem(80px)
+	margin-left: auto
+	margin-right: auto
+	margin-bottom: rem(14px)
+	border-radius: rem(7px)
+	position: relative
+	flex-shrink: 0
+	display: flex
+	align-items: center
+	justify-content: center
+	img
+		flex-shrink: 0
+		max-width: 80%
+		max-height: 80%
+		+tr
+
+.select-layout-item-title
+	font-size: rem(12px)
+
+.select-layout-more
+	grid-column: span 2
+
+.select-layout-more-link
+	display: block
+	+tr
+	text-decoration: none !important
+	color: $text
+	text-align: center
+	font-size: rem(12px)
+	display: flex
+	align-items: center
+	justify-content: center
+	flex-direction: column
+	height: 100%
+	border: 1px solid $gray
+	border-radius: rem(7px)
+	span
+		display: block
+		font-size: rem(32px)
+		line-height: 1
+		margin-top: rem(5px)
+	&:hover
+		border-color: $red
+		color: $red
+
+.layout-info-wrapper
+	display: flex
+
+.layout-image
+	width: 55%
+	flex-shrink: 0
+	background-color: #f6f6f6
+	border-radius: rem(7px)
+	display: flex
+	align-items: center
+	justify-content: center
+	padding: rem(15px) 0
+	.slick-current
+		img
+			transform: none
+	img
+		max-width: 95%
+		object-fit: contain
+		flex-shrink: 0
+		display: inline-block
+		max-height: rem(530px)
+		+tr
+		transform: translateX(-#{rem(30px)})
+
+.layout-info-block
+	padding-left: rem(40px)
+	width: 45%
+	flex-shrink: 0
+	display: flex
+	flex-direction: column
+	overflow: hidden
+
+.layout-breadcrumbs
+	margin-bottom: rem(25px)
+	font-weight: normal
+	ul
+		list-style-type: none
+		padding: 0
+		margin: 0
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		font-size: rem(14px)
+	li
+		margin-right: rem(46px)
+		margin-bottom: rem(5px)
+		position: relative
+		&:last-child
+			margin-right: 0
+			&:after
+				display: none
+		&:after
+			content: '\e915'
+			font-family: icon
+			position: absolute
+			left: 100%
+			margin-left: rem(15px)
+			font-size: rem(13px)
+			color: $gray
+			top: rem(1px)
+	a
+		color: $gray
+		+tr
+		text-decoration: none !important
+		&:hover
+			color: $red
+
+.layout-info-slider
+	.slick-current
+		.layout-info
+			transform: translateX(0)
+	.slick-list
+		overflow: visible !important
+
+.layout-info
+	font-weight: normal
+	+tr
+	transform: translateX(-#{rem(30px)})
+	.h3
+		margin-bottom: rem(10px)
+	ul
+		list-style-type: none
+		margin: 0 0 rem(40px)
+		padding: 0
+		li
+			position: relative
+			padding-left: rem(12px)
+			margin-bottom: rem(8px)
+			&:last-child
+				margin-bottom: 0
+			&:after
+				content: ''
+				position: absolute
+				top: rem(9px)
+				left: 0
+				width: rem(4px)
+				height: rem(4px)
+				background-color: $red
+				border-radius: 50%
+
+
+.layout-price
+	font-size: rem(20px)
+	color: $red
+	margin-bottom: rem(36px)
+
+.layout-btns
+	margin-top: auto
+	max-width: rem(403px)
+
+.layout-btn-main
+	margin-bottom: rem(12px)
+
+.layout-btn-items
+	display: flex
+	align-items: flex-end
+	justify-content: space-between
+
+.layout-btn-items-left
+	.btn
+		margin-bottom: rem(12px)
+		&:last-child
+			margin-bottom: 0
+
+.layout-btn-items-right
+	padding-bottom: rem(17px)
+	padding-right: rem(18px)
+
+.s-advantages
+	padding: rem(11px) 0 rem(80px)
+	[class*=col-]
+		display: flex
+		flex-direction: column
+
+.advantages-grid
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	grid-gap: rem(29px)
+	grid-auto-rows: 1fr
+	margin-right: rem(30px)
+	flex-grow: 1
+
+.advantages-item
+	height: 100%
+	overflow: hidden
+	position: relative
+	&.type-2
+		min-height: rem(500px)
+		.advantages-img
+			height: 100%
+			img
+				height: 100%
+				position: absolute
+				left: 0
+				top: 0
+		&:hover
+			.advantages-body
+				transform: translateY(-20px) !important
+				p
+					transform: translateY(0)
+			.advantages-img
+				&:after
+					opacity: 0
+				&:before
+					opacity: 1
+		.advantages-body
+			position: absolute
+			z-index: 2
+			color: #fff
+			bottom: 0
+			left: rem(33px)
+			right: rem(33px)
+			transition: transform .4s ease
+			margin-top: 0
+			max-width: rem(547px)
+			.h4
+				font-size: rem(32px)
+				margin-bottom: rem(27px)
+			p
+				transform: translateY(30px)
+				+tr
+	&.wide
+		grid-column: span 2
+
+.advantages-img
+	position: relative
+	overflow: hidden
+	border-radius: rem(7px)
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		z-index: 1
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%)
+		+tr
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		z-index: 1
+		+tr
+		background-color: rgba(#000, .5)
+		opacity: 0
+	img
+		width: 100%
+		border-radius: rem(7px)
+		height: rem(264px)
+		object-fit: cover
+	.stick
+		position: absolute
+		top: rem(30px)
+		left: rem(32px)
+
+.advantages-body
+	margin-top: rem(27px)
+	font-weight: normal
+	.h4
+		margin-bottom: rem(19px)
+	p
+		&:last-child
+			margin-bottom: 0
+
+.check-more-btn
+	text-align: right
+	margin-top: rem(43px)
+
+.video-item
+	margin-bottom: rem(34px)
+	.video-block
+		min-height: rem(264px)
+	.stick
+		position: absolute
+		top: rem(30px)
+		left: rem(32px)
+
+.video-content
+	margin-top: rem(25px)
+
+.video-list
+	flex-grow: 1
+
+.s-our-services
+	padding: rem(45px) 0
+	background-color: #F2F2F2
+
+.calculator
+	border-radius: rem(7px)
+	background-color: #fff
+	padding: rem(50px) rem(53px) rem(45px)
+	.form-control
+		font-size: 24px
+
+.section-title
+	margin-bottom: rem(40px)
+	.h2
+		margin: 0
+	p
+		margin: rem(13px) 0 0
+		font-size: rem(21px)
+		color: $gray
+
+.calculator-header
+	display: flex
+	margin-bottom: rem(50px)
+	.section-title
+		margin: 0 rem(20px) 0 0
+		flex-grow: 1
+
+.select2-container--default .select2-selection--single .select2-selection__placeholder
+	color: #9595A2
+
+.form-control
+	border: none
+	outline: none !important
+	background-color: #F2F2F2
+	border-radius: rem(7px)
+	height: rem(60px)
+	padding: 0 rem(24px)
+	width: 100%
+	font-weight: 500
+
+.filter-range-solo
+	position: relative
+	.filter-range-slider
+		left: rem(8px)
+		width: auto
+		right: rem(8px)
+
+.filter-minmax
+	display: flex
+	justify-content: space-between
+	white-space: nowrap
+	margin-top: 17px
+	font-size: rem(12px)
+	color: $gray
+
+.filter-range-select
+	position: absolute
+	top: rem(7px)
+	right: rem(7px)
+	.select2-container--default .select2-selection--single
+		background-color: #fff
+		height: rem(46px)
+		font-size: rem(14px)
+	.select2-container--default .select2-selection--single .select2-selection__rendered
+		line-height: rem(46px)
+		padding: 0 rem(36px) 0 rem(13px)
+	.select2-container--default .select2-selection--single .select2-selection__arrow
+		height: rem(46px)
+		right: rem(10px)
+
+.calculator-form
+	.row
+		margin: 0 -10px
+		[class*=col-]
+			padding-left: 10px
+			padding-right: 10px
+
+.calculator-results
+	display: flex
+	justify-content: flex-end
+	align-items: center
+	.btn
+		margin-right: rem(24px)
+		&:last-child
+			margin-right: 0
+
+.calcultator-total
+	font-weight: normal
+	margin-right: rem(49px)
+	position: relative
+
+.calcultator-total-price
+	display: block
+	font-weight: 600
+	line-height: 1
+	letter-spacing: -0.03em
+	font-size: rem(40px)
+	margin-top: rem(10px)
+	position: relative
+	+tr
+	color: $text
+	.loader
+		bottom: 0
+		top: 50%
+		margin-top: -#{rem(25px)}
+	&.loading
+		color: rgba($text, 0)
+		.loader
+			opacity: 1
+			visibility: visible
+
+.loader
+	position: absolute
+	width: rem(50px)
+	height: rem(50px)
+	border-radius: 50%
+	top: 0
+	left: 0
+	background-color: #f2f2f2
+	z-index: 1
+	animation-name: rotate
+	animation-duration: 1.5s
+	animation-timing-function: ease-in-out
+	animation-iteration-count: infinite
+	opacity: 0
+	visibility: hidden
+	+tr
+	&:after
+		content: ''
+		position: absolute
+		height: rem(8px)
+		width: rem(8px)
+		top: rem(6px)
+		border-radius: 50%
+		background-color: $red
+		left: 50%
+		margin-left: -#{rem(4px)}
+
+@keyframes rotate
+	0%
+		transform: rotate(0)
+	100%
+		transform: rotate(360deg)
 
 @import "media" // Always at the end
