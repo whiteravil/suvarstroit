@@ -24,6 +24,8 @@
 
 	<link rel="stylesheet" href="css/main.min.css">
 
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=fbbdc751-439c-4bb8-8182-0022fda8377b&lang=ru_RU" type="text/javascript"></script>
+
 </head>
 
 <body>
@@ -47,12 +49,26 @@
 				</div>
 
 				<div class="header-menu">
+					<div class="header-mob-close"></div>
+					<div class="header-mob-logo">
+						<div itemscope="" itemtype="http://schema.org/Organization">
+							<a itemprop="url" href="/" class="logo" rel="nofollow" title="Suvar">
+								<img src="img/logo.svg" itemprop="logo" alt="">
+							</a>
+						</div>
+					</div>
 					<nav class="main-menu">
 						<a href="#" class="menu-link">Квартиры</a>
 						<a href="#" class="menu-link">Ипотека</a>
 						<a href="#" class="menu-link">Коммерция</a>
 						<a href="#" class="menu-link">Управляющая компания</a>
 					</nav>
+					<div class="header-mob-phone">
+						<div class="header-phone">
+							<a href="tel:8 800 222-37-90" class="phone-link">8 800 222-37-90</a>
+							<p>Работаем ежедневно с 10:00 до 20:00</p>
+						</div>
+					</div>
 				</div>
 
 				<div class="header-burger">
@@ -312,7 +328,7 @@
 
 					<div class="filter-item filter-more-item">
 						<div class="filter-more">
-							<a href="#" class="filter-more-btn"><span class="icon-filter"></span>Еще фильтры</a>
+							<a href="#select-apps-filter" class="filter-more-btn open-popup"><span class="icon-filter"></span>Еще фильтры</a>
 						</div>
 					</div>
 
@@ -322,6 +338,13 @@
 
 				</div>
 
+			</div>
+		</div>
+
+		<div class="main-window-search">
+			<div class="main-window-search-group">
+				<input type="text" class="form-control" value="Подобрать квартиру" readonly>
+				<span class="icon-search"></span>
 			</div>
 		</div>
 
@@ -408,11 +431,11 @@
 			
 			<div class="about-row row">
 				
-				<div class="col-md-2">
+				<div class="col-lg-2 col-8">
 					<div class="about-title"><span><span class="color">#</span>Суварстроит. —</span> лидер по темпам строительства</div>
 				</div>
 
-				<div class="col-md-3">
+				<div class="col-lg-3 col-md-4">
 					<div class="video-block" data-video-src="https://www.youtube.com/embed/5sJh44adB1Y">
 						<div class="video-poster">
 							<img src="img/video-poster.jpg" alt="">
@@ -421,7 +444,7 @@
 					</div>
 				</div>
 
-				<div class="col-md-3">
+				<div class="col-lg-3 col-md-4">
 					<div class="about-blockquote">
 						<div class="blockqute-content">Мы строим дома, в которые хочется возвращаться. Нашей целью всегда было не просто проектирование и возведение жилых объектов — мы создаем среду, в которой хотели бы жить сами.</div>
 						<div class="blockqute-author">
@@ -482,18 +505,17 @@
 					<div class="city-map-dots-item" style="top: 52%; left: 23%">
 						<div class="city-map-dots-icon"><span></span>ЖК Времена года</div>
 						<div class="city-map-dots-content">
-							<img src="img/projects/1.jpg" alt="">
-							<div class="h5">ЖК Южный парк</div>
-							<p>Удобая транспортная развязка</p>
-							<p>Легко добраться до центра города за 15 минут</p>
-							<p>Дорого до международного аэропорта 10-15 минут</p>
+							<img src="img/projects/11.jpg" alt="">
+							<div class="h5">ЖК Времена года</div>
+							<p>Эко-комплекс комфорт класса из 9 пятиэтажных домов закрытого клубного формата в окружении лесного массива</p>
+							<p>17 минут от делового центра</p>
 							<a href="#" class="link-angle">Перейти <span class="icon-angle-right"></span></a>
 						</div>
 					</div>
 					<div class="city-map-dots-item" style="top: 7%; left: 40%">
-						<div class="city-map-dots-icon"><span></span>ЖК Южны парк</div>
+						<div class="city-map-dots-icon"><span></span>ЖК Южный парк</div>
 						<div class="city-map-dots-content">
-							<img src="img/projects/1.jpg" alt="">
+							<img src="img/projects/12.jpg" alt="">
 							<div class="h5">ЖК Южный парк</div>
 							<p>Удобая транспортная развязка</p>
 							<p>Легко добраться до центра города за 15 минут</p>
@@ -504,11 +526,10 @@
 					<div class="city-map-dots-item" style="top: 74%; left: 67%">
 						<div class="city-map-dots-icon"><span></span>ЖК Станция Спортивная</div>
 						<div class="city-map-dots-content">
-							<img src="img/projects/1.jpg" alt="">
-							<div class="h5">ЖК Южный парк</div>
-							<p>Удобая транспортная развязка</p>
-							<p>Легко добраться до центра города за 15 минут</p>
-							<p>Дорого до международного аэропорта 10-15 минут</p>
+							<img src="img/projects/13.jpg" alt="">
+							<div class="h5">ЖК Станция Спортивная</div>
+							<p>Первый жилой комплекс небывалого масштаба с развитой спортивной инфраструктурой</p>
+							<p>Дорога до международного аэропорта — 5-10 минут</p>
 							<a href="#" class="link-angle">Перейти <span class="icon-angle-right"></span></a>
 						</div>
 					</div>
@@ -533,7 +554,7 @@
 					</div>
 				</div>
 				<div class="city-map-open-full">
-					<a href="#" class="btn btn-white-border btn-icon"><span class="icon-location-arrow"></span> Смотреть на карте</a>
+					<a href="#" class="btn btn-white-border btn-icon" data-object-json=""><span class="icon-location-arrow"></span> Смотреть на карте</a>
 				</div>
 			</div>
 
@@ -544,7 +565,7 @@
 		<div class="container">
 			<div class="row">
 				
-				<div class="col-md-2">
+				<div class="col-xl-2">
 					<div class="location-nav">
 						<div class="h6">Микрогород Лаишевский узел</div>
 						<div class="location-nav-link"><a href="#" class="active">Станция Спортивная</a></div>
@@ -562,7 +583,7 @@
 					</div>
 				</div>
 
-				<div class="col-md-6">
+				<div class="col-xl-6">
 
 					<div class="projects-header">
 						<div class="projects-header-left">
@@ -588,7 +609,7 @@
 								<div class="project-header">
 									<img src="img/projects/2.jpg" alt="">
 									<div class="stick">Комфорт +</div>
-									<a href="#" class="project-map-link"><span class="icon-location-arrow"></span> Смотреть на карте</a>
+									<a href="#map-popup" class="project-map-link open-popup" data-name="Станция Спортивная" data-coord="55.680153, 49.200674"><span class="icon-location-arrow"></span> Смотреть на карте</a>
 									<div class="project-title">
 										<div class="h3">Станция Спортивная</div>
 										<p>Жилой комплекс с развитой спортивной инфраструктурой</p>
@@ -643,7 +664,7 @@
 								<div class="project-header">
 									<img src="img/projects/3.jpg" alt="">
 									<div class="stick">Комфорт</div>
-									<a href="#" class="project-map-link"><span class="icon-location-arrow"></span> Смотреть на карте</a>
+									<a href="#map-popup" class="project-map-link open-popup" data-name="Южный парк" data-coord="55.689278, 49.200297"><span class="icon-location-arrow"></span> Смотреть на карте</a>
 									<div class="project-title">
 										<div class="h3">Южный парк</div>
 										<p>Комплекс внутри большой лесопарковой территории</p>
@@ -698,7 +719,7 @@
 								<div class="project-header">
 									<img src="img/projects/4.jpg" alt="">
 									<div class="stick">Комфорт +</div>
-									<a href="#" class="project-map-link"><span class="icon-location-arrow"></span> Смотреть на карте</a>
+									<a href="#map-popup" class="project-map-link open-popup" data-name="Времена года" data-coord="55.681641, 49.191961"><span class="icon-location-arrow"></span> Смотреть на карте</a>
 								</div>
 								<div class="project-body">
 									<div class="project-title">
@@ -765,22 +786,20 @@
 					<div class="city-map-dots-item" style="top: 44%; left: 38%">
 						<div class="city-map-dots-icon"><span></span>Сказочный лес</div>
 						<div class="city-map-dots-content">
-							<img src="img/projects/1.jpg" alt="">
-							<div class="h5">ЖК Южный парк</div>
-							<p>Удобая транспортная развязка</p>
-							<p>Легко добраться до центра города за 15 минут</p>
-							<p>Дорого до международного аэропорта 10-15 минут</p>
+							<img src="img/projects/14.jpg" alt="">
+							<div class="h5">ЖК Сказочный лес</div>
+							<p>В центре Приволжского района, вблизи живописной березовой рощи</p>
+							<p>Удобная транспортная развязка – до центра 15 минут</p>
 							<a href="#" class="link-angle">Перейти <span class="icon-angle-right"></span></a>
 						</div>
 					</div>
 					<div class="city-map-dots-item" style="top: 20%; left: 74%">
 						<div class="city-map-dots-icon"><span></span>Палитра</div>
 						<div class="city-map-dots-content">
-							<img src="img/projects/1.jpg" alt="">
-							<div class="h5">ЖК Южный парк</div>
-							<p>Удобая транспортная развязка</p>
-							<p>Легко добраться до центра города за 15 минут</p>
-							<p>Дорого до международного аэропорта 10-15 минут</p>
+							<img src="img/projects/15.jpg" alt="">
+							<div class="h5">ЖК Палитра</div>
+							<p>Новый, современный,комфортный, дружелюбный, сверкающий самыми яркими красками жилой комплекс</p>
+							<p>Легко добраться до центра города за 10 минут</p>
 							<a href="#" class="link-angle">Перейти <span class="icon-angle-right"></span></a>
 						</div>
 					</div>
@@ -810,9 +829,9 @@
 		<div class="container">
 			<div class="row">
 				
-				<div class="col-md-2"></div>
+				<div class="col-xl-2"></div>
 
-				<div class="col-md-6">
+				<div class="col-xl-6">
 
 					<div class="projects-header">
 						<div class="projects-header-left">
@@ -838,7 +857,7 @@
 								<div class="project-header">
 									<img src="img/projects/5.jpg" alt="">
 									<div class="stick">Комфорт</div>
-									<a href="#" class="project-map-link"><span class="icon-location-arrow"></span> Смотреть на карте</a>
+									<a href="#map-popup" class="project-map-link open-popup" data-name="Сказочный лес" data-coord="55.723937, 49.174767"><span class="icon-location-arrow"></span> Смотреть на карте</a>
 									<div class="project-title">
 										<div class="h3">Сказочный лес</div>
 										<p>Комплекс жилых домов внутри большой лесопарковой территории</p>
@@ -892,7 +911,7 @@
 								<div class="project-header">
 									<img src="img/projects/6.jpg" alt="">
 									<div class="stick">Комфорт</div>
-									<a href="#" class="project-map-link"><span class="icon-location-arrow"></span> Смотреть на карте</a>
+									<a href="#map-popup" class="project-map-link open-popup" data-name="Палитра" data-coord="55.722289, 49.185600"><span class="icon-location-arrow"></span> Смотреть на карте</a>
 									<div class="project-title">
 										<div class="h3">Палитра</div>
 										<p>Жилой комплекс небывалого масштаба с развитой инфраструктурой</p>
@@ -954,11 +973,11 @@
 		<div class="container">
 			<div class="row">
 				
-				<div class="col-md-2">
+				<div class="col-xl-2">
 					<div class="section-nmb">03</div>
 				</div>
 
-				<div class="col-md-6">
+				<div class="col-xl-6">
 
 					<div class="projects-main-title">
 						<div class="h2">Другие проекты</div>
@@ -971,7 +990,7 @@
 								<div class="project-header">
 									<img src="img/projects/7.jpg" alt="">
 									<div class="stick">Комфорт</div>
-									<a href="#" class="project-map-link"><span class="icon-location-arrow"></span> Смотреть на карте</a>
+									<a href="#map-popup" class="project-map-link open-popup" data-name="Залесный сити" data-coord="55.845249, 48.906215"><span class="icon-location-arrow"></span> Смотреть на карте</a>
 								</div>
 								<div class="project-body">
 									<div class="project-title">
@@ -1031,11 +1050,11 @@
 		<div class="container">
 			<div class="row">
 				
-				<div class="col-md-2">
+				<div class="col-xl-2">
 					<div class="section-nmb">04</div>
 				</div>
 
-				<div class="col-md-6">
+				<div class="col-xl-6">
 
 					<div class="projects-header">
 						<div class="h2">Проекты повышенного комфорта</div>
@@ -1048,7 +1067,7 @@
 								<div class="project-header">
 									<img src="img/projects/8.jpg" alt="">
 									<div class="stick black">Бизнес</div>
-									<a href="#" class="project-map-link"><span class="icon-location-arrow"></span> Смотреть на карте</a>
+									<a href="#map-popup" class="project-map-link open-popup" data-name="Столичный" data-coord="55.819123, 49.144472"><span class="icon-location-arrow"></span> Смотреть на карте</a>
 									<div class="project-title">
 										<div class="h3">Столичный</div>
 										<p>Первый жилой комплекс в Поволжье с панорамными галереями</p>
@@ -1103,7 +1122,7 @@
 								<div class="project-header">
 									<img src="img/projects/9.jpg" alt="">
 									<div class="stick black">Бизнес</div>
-									<a href="#" class="project-map-link"><span class="icon-location-arrow"></span> Смотреть на карте</a>
+									<a href="#map-popup" class="project-map-link open-popup" data-name="Манхэттен" data-coord="55.760824, 49.150647"><span class="icon-location-arrow"></span> Смотреть на карте</a>
 									<div class="project-title">
 										<div class="h3">Манхэттен</div>
 										<p>Контент-хаус «Манхэттен» — дома, наполненные Нью-Йорком.</p>
@@ -1158,7 +1177,7 @@
 								<div class="project-header">
 									<img src="img/projects/10.jpg" alt="">
 									<div class="stick black">Премиум</div>
-									<a href="#" class="project-map-link"><span class="icon-location-arrow"></span> Смотреть на карте</a>
+									<a href="#map-popup" class="project-map-link open-popup" data-name="Август Астры" data-coord="55.778126, 49.137665"><span class="icon-location-arrow"></span> Смотреть на карте</a>
 								</div>
 								<div class="project-body">
 									<div class="project-title">
@@ -1219,10 +1238,10 @@
 
 			<div class="layouts-header">
 				<div class="row">
-					<div class="col-md-2">
+					<div class="col-xl-2">
 						<div class="section-nmb big">10</div>
 					</div>
-					<div class="col-md-6">
+					<div class="col-xl-6">
 						<div class="layouts-filter">
 							<div class="h2">нескучных<br>планировок</div>
 							<nav class="layouts-filter-nav">
@@ -1241,7 +1260,7 @@
 			<div class="layouts-body">
 				<div class="row">
 					
-					<div class="col-md-2">
+					<div class="col-lg-2">
 						<div class="select-layout-wrapper">
 							<div class="select-layout-grid">
 								<div class="select-layout-border"></div>
@@ -1294,7 +1313,7 @@
 						</div>
 					</div>
 
-					<div class="col-md-6">
+					<div class="col-lg-6">
 						<div class="layout-info-wrapper">
 							<div class="layout-image">
 								<img src="img/layout-appartaments.png" data-img="1" alt="">
@@ -1415,7 +1434,7 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-md-6">
+				<div class="col-xl-6">
 
 					<div class="advantages-grid">
 
@@ -1486,7 +1505,7 @@
 
 				</div>
 
-				<div class="col-md-2">
+				<div class="col-xl-2">
 
 					<div class="video-list">
 						<div class="video-item">
@@ -1555,7 +1574,7 @@
 				<form class="calculator-form">
 					<div class="row">
 
-						<div class="col-md-2">
+						<div class="col-lg-2 col-md-4">
 							<div class="filter-item">
 								<div class="filter-title">Комнатность</div>
 								<div class="filter-checkbox">
@@ -1579,7 +1598,7 @@
 							</div>
 						</div>
 
-						<div class="col-md-2">
+						<div class="col-lg-2 col-md-4">
 							<div class="filter-item">
 								<div class="filter-title">Комплекс</div>
 								<div class="filter-select">
@@ -1601,7 +1620,7 @@
 
 						<div class="col-8"></div>
 
-						<div class="col-md-2">
+						<div class="col-lg-2 col-md-4">
 							<div class="filter-item">
 								<div class="filter-title">Стоимость недвижимости, ₽</div>
 								<div class="filter-range-solo">
@@ -1617,7 +1636,7 @@
 							</div>
 						</div>
 
-						<div class="col-md-2">
+						<div class="col-lg-2 col-md-4">
 							<div class="filter-item">
 								<div class="filter-title">Первоначальный взнос, ₽</div>
 								<div class="filter-range-solo with-select">
@@ -1640,14 +1659,14 @@
 							</div>
 						</div>
 
-						<div class="col-md-2">
+						<div class="col-lg-2 col-md-4">
 							<div class="filter-item">
 								<div class="filter-title">Ставка, %</div>
 								<input type="text" class="form-control decimal" value="0,01">
 							</div>
 						</div>
 
-						<div class="col-md-2">
+						<div class="col-lg-2 col-md-4">
 							<div class="filter-item">
 								<div class="filter-title">Срок ипотеки, лет</div>
 								<div class="filter-range-solo">
@@ -1681,8 +1700,309 @@
 
 			</div>
 
+			<div class="our-services">
+				
+				<div class="section-title">
+					<div class="h2">Наши сервисы</div>
+					<p>Купить квартиру никогда не было так просто</p>
+				</div>
+
+				<div class="our-services-grid">
+					
+					<div class="our-services-item">
+						<a href="#" class="our-services-item-link"></a>
+						<div class="our-services-item-left">
+							<div class="h4">Trade-in</div>
+							<p>Живите в своей квартире до получения ключей</p>
+						</div>
+						<div class="our-services-item-right">
+							<div class="our-services-item-icon">
+								<img src="img/icons/home-reload.svg" class="img-to-svg" alt="">
+							</div>
+						</div>
+					</div>
+
+					<div class="our-services-item">
+						<a href="#" class="our-services-item-link"></a>
+						<div class="our-services-item-left">
+							<div class="h4">Рассрочка</div>
+							<p>Без процентов до 2-х лет</p>
+						</div>
+						<div class="our-services-item-right">
+							<div class="our-services-item-icon">
+								<img src="img/icons/percent.svg" class="img-to-svg" alt="">
+							</div>
+						</div>
+					</div>
+
+					<div class="our-services-item">
+						<a href="#" class="our-services-item-link"></a>
+						<div class="our-services-item-left">
+							<div class="h4">Материнский капитал</div>
+							<p>Даже в счет первоначального взноса</p>
+						</div>
+						<div class="our-services-item-right">
+							<div class="our-services-item-icon">
+								<img src="img/icons/mother.svg" class="img-to-svg" alt="">
+							</div>
+						</div>
+					</div>
+
+					<div class="our-services-item">
+						<a href="#" class="our-services-item-link"></a>
+						<div class="our-services-item-left">
+							<div class="h4">Служба заботы</div>
+							<p>С вами 24/7 до и после получения квартиры</p>
+						</div>
+						<div class="our-services-item-right">
+							<div class="our-services-item-icon">
+								<img src="img/icons/home-hands.svg" class="img-to-svg" alt="">
+							</div>
+						</div>
+					</div>
+
+					<div class="our-services-item">
+						<a href="#" class="our-services-item-link"></a>
+						<div class="our-services-item-left">
+							<div class="h4">Сделка онлайн</div>
+							<p>От консультации и просмотра квартиры до подписания документов</p>
+						</div>
+						<div class="our-services-item-right">
+							<div class="our-services-item-icon">
+								<img src="img/icons/key-monitor.svg" class="img-to-svg" alt="">
+							</div>
+						</div>
+					</div>
+
+					<div class="our-services-item">
+						<a href="#" class="our-services-item-link"></a>
+						<div class="our-services-item-left">
+							<div class="h4">Ипотека от 0,1%</div>
+							<p>Много банков партнеров, расчет и предварительная заявка на сайте</p>
+						</div>
+						<div class="our-services-item-right">
+							<div class="our-services-item-icon">
+								<img src="img/icons/insurance.svg" class="img-to-svg" alt="">
+							</div>
+						</div>
+					</div>
+
+					<div class="our-services-item">
+						<a href="#" class="our-services-item-link"></a>
+						<div class="our-services-item-left">
+							<div class="h4">Арендный сервис</div>
+							<p>Бесплатные услуги для собственников квартир в наших ЖК</p>
+						</div>
+						<div class="our-services-item-right">
+							<div class="our-services-item-icon">
+								<img src="img/icons/home-clock.svg" class="img-to-svg" alt="">
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
 		</div>
 	</section>
+
+	<section class="s-text-slider">
+		<div class="text-slider-wrapper">
+			<div class="text-slider">
+				<div class="text-slider-item">работаем для вас без выходных</div>
+				<div class="text-slider-item">работаем для вас без выходных</div>
+				<div class="text-slider-item">работаем для вас без выходных</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="s-contacts">
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-lg-4">
+					
+					<div class="contacts-form-block">
+						<div class="contacts-form-left">
+							<div class="h2">Напишите нам</div>
+							<form class="contacts-form">
+								<div class="row">
+									<div class="col-8">
+										<div class="form-group white">
+											<select class="select-style">
+												<option value="Запись в офисы продаж">Запись в офисы продаж</option>
+												<option value="Сотрудничество">Сотрудничество</option>
+												<option value="Другой вопрос">Другой вопрос</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="form-group white">
+											<input type="text" class="form-control" placeholder="Имя">
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="form-group white">
+											<input type="text" class="form-control phone-mask" placeholder="Телефон">
+										</div>
+									</div>
+									<div class="col-8">
+										<div class="form-footer-row">
+											<p>Нажимая “Отправить”, вы соглашаетесь с политикой конфиденциальности</p>
+											<button type="submit" class="btn">Отправить запрос</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="contacts-form-right">
+							<img src="img/contacts-img.png" alt="">
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-lg-2 col-md-4">
+					
+					<div class="contacts-list">
+						<div class="contacts-links">
+							<div class="contacts-phone"><a href="tel:+7 800 222-31-68">+7 800 222-31-68</a></div>
+							<div class="contacts-mail"><a href="mailto:hello@suvarstroit.ru">mailto:hello@suvarstroit.ru</a></div>
+						</div>
+						<nav class="contacts-nav">
+							<a href="#" class="contacts-nav-link"><span class="icon-telegram"></span>Написать в Telegram</a>
+							<a href="#" class="contacts-nav-link"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
+							<a href="#" class="contacts-nav-link"><span class="icon-zoom"></span>Позвонить в Zoom</a>
+							<a href="#" class="contacts-nav-link"><span class="icon-skype"></span>Позвонить в Skype</a>
+							<a href="#" class="contacts-nav-link"><span class="icon-video"></span>Позвонить в Face Time</a>
+						</nav>
+					</div>
+
+				</div>
+
+				<div class="col-lg-2 col-md-4">
+					
+					<div class="contacts-map">
+						<div class="contacts-map-wrapper">
+							<div id="contacts-map"></div>
+							<a href="#contacts-map-popup" class="open-full-contacts-map open-popup"></a>
+						</div>
+						<div class="contacts-map-objects-list">
+							<div class="contacts-map-objects-list-item">
+								<span>ЖК Станция Спортивная</span>
+								<span>ул. Проезд Детский, д.1 к.5,</span>
+							</div>
+							<div class="contacts-map-objects-list-item">
+								<span>ЖК Столичный</span>
+								<span>ул. Чистопольская 86/10</span>
+							</div>
+							<div class="contacts-map-objects-list-item">
+								<span>ЖК Сказочный лес</span>
+								<span>ул.Братьев Батталовых 20 к.1</span>
+							</div>
+							<div class="contacts-map-objects-list-item">
+								<span>ЖК Времена года</span>
+								<span>ул. Генерала Ерина, д.3</span>
+							</div>
+							<div class="contacts-map-objects-list-item">
+								<span>ЖК Манхэттен</span>
+								<span>ул. Оренбургский тракт, 8</span>
+							</div>
+							<div class="contacts-map-objects-list-item">
+								<span>ЖК Август Астры</span>
+								<span>л. Чистопольская 86/10</span>
+							</div>
+							<div class="contacts-map-objects-all"><a href="#">Показать все</a></div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-lg-1 col-md-2">
+					<nav class="footer-nav">
+						<div class="h6">Покупателям</div>
+						<ul>
+							<li><a href="#">Проекты</a></li>
+							<li><a href="#">Квартиры</a></li>
+							<li><a href="#">Парковые и кладовые</a></li>
+							<li><a href="#">Акции и скидки</a></li>
+							<li><a href="#">Коммерческая недвижимость</a></li>
+							<li><a href="#">Аренда помещений</a></li>
+						</ul>
+					</nav>
+				</div>
+
+				<div class="col-lg-1 col-md-2">
+					<nav class="footer-nav">
+						<div class="h6">Способы покупки</div>
+						<ul>
+							<li><a href="#">Оформление сделки онлайн</a></li>
+							<li><a href="#">Ипотека</a></li>
+							<li><a href="#">Trade-in</a></li>
+							<li><a href="#">Рассрочка</a></li>
+							<li><a href="#">Материнский капитал</a></li>
+						</ul>
+					</nav>
+				</div>
+
+				<div class="col-lg-1 col-md-2">
+					<nav class="footer-nav">
+						<div class="h6">Жителям</div>
+						<ul>
+							<li><a href="#">Карта лояльности</a></li>
+							<li><a href="#">Управляющая компания</a></li>
+							<li><a href="#">Дизайн-проекты и отделка</a></li>
+							<li><a href="#">Арендный сервис</a></li>
+						</ul>
+					</nav>
+				</div>
+
+				<div class="col-xl-2 col-lg-1 col-md-2">
+					<nav class="footer-nav">
+						<div class="h6">О нас</div>
+						<ul>
+							<li><a href="#">Кто мы</a></li>
+							<li><a href="#">Вакансии</a></li>
+							<li><a href="#">Новости</a></li>
+							<li><a href="#">Документы</a></li>
+						</ul>
+					</nav>
+				</div>
+
+				<div class="col-xl-3 col-lg-4">
+					<div class="footer-copyright">
+						<p>Все права на публикуемые на сайте материалы принадлежат Суварстроит. Любая информация, представленная на данном сайте, носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями статьи 437 ГК РФ.</p>
+						<div class="footer-copyright-row">
+							<div class="footer-copyright-left">
+								<div class="copyright">© Суварстроит 2015 — 2021</div>
+								<div class="copyright"><a href="#">Политика конфиденциальности</a></div>
+								<div class="copyright"><a href="#">Условия использования</a></div>
+								<div class="footer-dev">
+									<a href="#">Создание сайта <img src="img/markweber.svg" alt=""></a>
+								</div>
+							</div>
+							<div class="footer-copyright-right">
+								<div class="footer-apps">
+									<a href="#"><img src="img/app-store.png" alt=""></a>
+									<a href="#"><img src="img/google-play.png" alt=""></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</footer>
 
 	<div class="popup-wrapper" id="video-popup">
 		<div class="popup-flex">
@@ -1696,7 +2016,437 @@
 		</div>
 	</div>
 
+	<div class="popup-wrapper popup-full-window" id="select-apps-filter">
+		<div class="popup-flex">
+			<div class="popup-block">
+				<div class="popup-close"></div>
+				<div class="popup-content">
+					<div class="full-filters-block">
+						<div class="container">
+							<div class="section-title">
+								<div class="h2">Подбор квартиры</div>
+							</div>
+							<div class="full-filters-row">
+								<div class="row">
+									<div class="col-lg-2 col-md-4">
+										<div class="filter-item">
+											<div class="filter-title">Количество комнат</div>
+											<div class="filter-checkbox">
+												<label class="filter-checkbox-label">
+													<input type="checkbox" name="appart-filter" checked>
+													<span>cтудия</span>
+												</label>
+												<label class="filter-checkbox-label">
+													<input type="checkbox" name="appart-filter">
+													<span>1</span>
+												</label>
+												<label class="filter-checkbox-label">
+													<input type="checkbox" name="appart-filter">
+													<span>2</span>
+												</label>
+												<label class="filter-checkbox-label">
+													<input type="checkbox" name="appart-filter">
+													<span>3</span>
+												</label>
+												<label class="filter-checkbox-label">
+													<input type="checkbox" name="appart-filter">
+													<span>4</span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-4">
+										<div class="filter-item">
+											<div class="filter-title">Жилой комплекс</div>
+											<div class="filter-select">
+												<select class="select-style">
+													<option value="Южный парк">Южный парк</option>
+													<option value="Столичный">Столичный</option>
+													<option value="Станция Спортивная">Станция Спортивная</option>
+													<option value="Залесный сити">Залесный сити</option>
+													<option value="Времена года">Времена года</option>
+													<option value="Манхэттен">Манхэттен</option>
+													<option value="Сказочный лес">Сказочный лес</option>
+													<option value="Август Астры лес">Август Астры лес</option>
+													<option value="Палитра">Палитра</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-4">
+										<div class="filter-item">
+											<div class="filter-title">Район</div>
+											<div class="filter-select">
+												<select class="select-style">
+													<option value="Все">Все</option>
+													<option value="Авиастроительный">Авиастроительный</option>
+													<option value="Вахитовский">Вахитовский</option>
+													<option value="Кировский">Кировский</option>
+													<option value="Московский">Московский</option>
+													<option value="Ново-Савиновский">Ново-Савиновский</option>
+													<option value="Приволжский">Приволжский</option>
+													<option value="Советский">Советский</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-4">
+										<div class="filter-item">
+											<div class="filter-title">Стоимость, млн ₽</div>
+											<div class="filter-range">
+												<div class="filter-range-inputs">
+													<div class="filter-range-input-group">
+														<span>от</span>
+														<input type="text" class="filter-range-input decimal from" value="1.5" data-min="0">
+													</div>
+													<div class="filter-range-input-group">
+														<span>до</span>
+														<input type="text" class="filter-range-input decimal to" value="17.5" data-max="22">
+													</div>
+												</div>
+												<div class="filter-range-slider"></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-4">
+										<div class="filter-item">
+											<div class="filter-title">Площадь, м<sup>2</sup></div>
+											<div class="filter-range">
+												<div class="filter-range-inputs">
+													<div class="filter-range-input-group">
+														<span>от</span>
+														<input type="text" class="filter-range-input decimal from" value="32" data-min="0">
+													</div>
+													<div class="filter-range-input-group">
+														<span>до</span>
+														<input type="text" class="filter-range-input decimal to" value="186" data-max="220">
+													</div>
+												</div>
+												<div class="filter-range-slider" data-step="1"></div>
+											</div>
+											<div class="filter-checkboxes">
+												<div class="checkbox">
+													<label>
+														<input type="checkbox">
+														<span>Большая квартира</span>
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-4">
+										<div class="filter-item">
+											<div class="filter-title">Жилая площадь, м<sup>2</sup></div>
+											<div class="filter-range">
+												<div class="filter-range-inputs">
+													<div class="filter-range-input-group">
+														<span>от</span>
+														<input type="text" class="filter-range-input decimal from" value="32" data-min="0">
+													</div>
+													<div class="filter-range-input-group">
+														<span>до</span>
+														<input type="text" class="filter-range-input decimal to" value="186" data-max="220">
+													</div>
+												</div>
+												<div class="filter-range-slider" data-step="1"></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-4">
+										<div class="filter-item">
+											<div class="filter-title">Площадь кухни, м<sup>2</sup></div>
+											<div class="filter-range">
+												<div class="filter-range-inputs">
+													<div class="filter-range-input-group">
+														<span>от</span>
+														<input type="text" class="filter-range-input decimal from" value="32" data-min="0">
+													</div>
+													<div class="filter-range-input-group">
+														<span>до</span>
+														<input type="text" class="filter-range-input decimal to" value="186" data-max="220">
+													</div>
+												</div>
+												<div class="filter-range-slider" data-step="1"></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-4">
+										<div class="filter-item">
+											<div class="filter-title">Этаж</div>
+											<div class="filter-range">
+												<div class="filter-range-inputs">
+													<div class="filter-range-input-group">
+														<span>от</span>
+														<input type="text" class="filter-range-input decimal from" value="1">
+													</div>
+													<div class="filter-range-input-group">
+														<span>до</span>
+														<input type="text" class="filter-range-input decimal to" value="9">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-4">
+										<div class="filter-item">
+											<div class="filter-title">Варианты отделки</div>
+											<div class="filter-checkbox">
+												<label class="filter-checkbox-label">
+													<input type="radio" name="appart-option" checked>
+													<span>Не важно</span>
+												</label>
+												<label class="filter-checkbox-label">
+													<input type="radio" name="appart-option">
+													<span>С отделкой</span>
+												</label>
+												<label class="filter-checkbox-label">
+													<input type="radio" name="appart-option">
+													<span>Без отделки</span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-4">
+										<div class="filter-item">
+											<div class="filter-title">Для кого</div>
+											<div class="filter-select">
+												<select class="select-style">
+													<option value="Всем">Всем</option>
+													<option value="С детьми">С детьми</option>
+													<option value="Семье">Семье</option>
+												</select>
+											</div>
+											<div class="filter-checkboxes">
+												<div class="checkbox">
+													<label>
+														<input type="checkbox">
+														<span>Терасса</span>
+													</label>
+												</div>
+												<div class="checkbox">
+													<label>
+														<input type="checkbox">
+														<span>С мебелью</span>
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="full-filter-footer">
+								<div class="full-filter-left">
+									<div class="mortgage-block">
+										<div class="mortgage-switch">
+											<div class="switch-checkbox">
+												<div class="switch-checkbox-title">В ипотеку</div>
+												<label class="switch-checkbox-label">
+													<input type="checkbox" class="switch-checkbox-input">
+													<span></span>
+												</label>
+											</div>
+										</div>
+										<div class="mortgage-form">
+											<div class="row">
+												<div class="col-lg-auto">
+													<div class="filter-item">
+														<div class="filter-title">Платеж по ипотеке, ₽</div>
+														<div class="filter-range-solo">
+															<div class="filter-range-solo-input with-label">
+																<input type="text" class="form-control decimal" value="40000">
+																<span>до</span>
+															</div>
+															<div class="filter-range-slider" data-min="0" data-max="60000" data-step="1"></div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-auto">
+													<div class="filter-item">
+														<div class="filter-title">Первоначальный взнос, ₽</div>
+														<div class="filter-range-solo">
+															<div class="filter-range-solo-input">
+																<input type="text" class="form-control decimal" value="300000">
+															</div>
+															<div class="filter-range-slider" data-min="0" data-max="450000" data-step="1"></div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-auto">
+													<div class="filter-item">
+														<div class="filter-title">Срок, лет</div>
+														<div class="filter-range-solo">
+															<div class="filter-range-solo-input">
+																<input type="text" class="form-control decimal" value="15">
+															</div>
+															<div class="filter-range-slider" data-min="0" data-max="40" data-step="1"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="full-filter-right">
+									<div class="full-filter-btns">
+										<a href="#" class="clear-filter">Очистить фильтр</a>
+										<a href="#" class="btn">Показать 120 квартир</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup-wrapper" id="map-popup">
+		<div class="popup-flex">
+			<div class="popup-block">
+				<div class="popup-header">
+					<div class="popup-title"><div class="h3">ЖК “Времена года”</div></div>
+					<div class="popup-close"></div>
+				</div>
+				<div class="popup-content">
+					<div class="popup-map">
+						<div id="map-popup-frame"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup-wrapper" id="contacts-map-popup">
+		<div class="popup-flex">
+			<div class="popup-block">
+				<div class="popup-close"></div>
+				<div class="popup-content">
+					<div class="popup-map">
+						<div id="map-contacts-popup-frame"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<script src="js/scripts.min.js"></script>
+
+	<script>
+		
+		ymaps.ready(init);
+
+		function init() {
+
+			let contactsMapData = [
+				{
+					id: 1,
+					name: 'ЖК Станция Спортивная',
+					street: 'ул. Проезд Детский, д.1 к.5',
+					coord: [55.680077, 49.198204],
+				},
+				{
+					id: 2,
+					name: 'ЖК Столичный',
+					street: 'ул. Чистопольская 86/10',
+					coord: [55.818766, 49.143065],
+				},
+				{
+					id: 3,
+					name: 'ЖК Сказочный лес',
+					street: 'ул.Братьев Батталовых 20 к.1',
+					coord: [55.721589, 49.187604],
+				},
+				{
+					id: 4,
+					name: 'ЖК Времена года',
+					street: 'ул. Генерала Ерина, д.3',
+					coord: [55.681554, 49.193838],
+				},
+				{
+					id: 5,
+					name: 'ЖК Манхэттен',
+					street: 'ул. Оренбургский тракт, 8',
+					coord: [55.759101, 49.150180],
+				},
+				{
+					id: 6,
+					name: 'ЖК Август Астры',
+					street: 'л. Чистопольская 86/10',
+					coord: [55.818766, 49.143065],
+				}
+			];
+
+			let contactsMap = new ymaps.Map('contacts-map', {
+				center: [55.796119, 49.104043],
+				zoom: 9,
+				duration: 1000,
+				controls: []
+			}, {
+				searchControlProvider: 'yandex#search'
+			});
+
+			let projectsMap = new ymaps.Map('map-popup-frame', {
+				center: [55.796119, 49.104043],
+				zoom: 15,
+				duration: 1000,
+				controls: []
+			}, {
+				searchControlProvider: 'yandex#search'
+			});
+
+			let contactsMapFull = new ymaps.Map('map-contacts-popup-frame', {
+				center: [55.796119, 49.104043],
+				zoom: 10,
+				duration: 1000,
+				controls: []
+			}, {
+				searchControlProvider: 'yandex#search'
+			});
+
+			let contactsMapCollection = new ymaps.GeoObjectCollection();
+			let contactsMapFullCollection = new ymaps.GeoObjectCollection();
+
+			contactsMapData.forEach(item => {
+				contactsMapCollection.add(new ymaps.Placemark(item.coord, {}, {
+					iconLayout: 'default#image',
+					iconImageHref: 'img/icons/map-marker.svg',
+					iconImageSize: [22, 30],
+					iconImageOffset: [-11, -30]
+				}));
+				contactsMapFullCollection.add(new ymaps.Placemark(item.coord, {}, {
+					iconLayout: 'default#image',
+					iconImageHref: 'img/icons/map-marker.svg',
+					iconImageSize: [22, 30],
+					iconImageOffset: [-11, -30]
+				}));
+			});
+
+			contactsMap.geoObjects.add(contactsMapCollection);
+			contactsMapFull.geoObjects.add(contactsMapFullCollection);
+		
+			$('.project-map-link').on('click', function(e) {
+				e.preventDefault();
+				let ths = $(this),
+						coord = ths.data('coord').split(', '),
+						coordArr = [parseFloat(coord[0]), parseFloat(coord[1])];
+				let placemark = new ymaps.Placemark(coordArr, {
+					iconContent: `<div class="project-mark">${ths.data('name')}</div>`
+				}, {
+					iconLayout: 'default#imageWithContent',
+					iconImageHref: 'img/icons/map-marker-2.svg',
+					iconImageSize: [51, 68],
+					iconImageOffset: [-20.5, -68],
+					hideIconOnBalloonOpen: false,
+				});
+				projectsMap.geoObjects.removeAll();
+				projectsMap.geoObjects.add(placemark);
+				projectsMap.panTo(coordArr);
+				$('#map-popup .popup-title .h3').text(`ЖК “${ths.data('name')}”`)
+			});
+
+		}
+
+	</script>
 
 </body>
 </html>
