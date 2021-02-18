@@ -6,6 +6,8 @@
 @media (max-width: 1440px)
 	html, body
 		font-size: 12px
+	.logo img
+		width: 158px
 
 @media (max-width: 1280px)
 	.h2, h2
@@ -78,6 +80,8 @@
 			height: 1px
 			top: 0
 			background-color: rgba(#fff, .1)
+		.header-phone
+			text-align: left
 	.header-phone
 		flex-grow: 0
 		text-align: right
@@ -116,9 +120,9 @@
 			width: 300px !important
 	.about-title
 		font-size: 18px
-	.blockqute-content
+	.blockquote-content
 		font-size: 16px
-	.blockqute-author-img img
+	.blockquote-author-img img
 		width: 90px
 		height: 90px
 	.about-in-nmbrs
@@ -148,6 +152,8 @@
 	.advantages-grid
 		margin-right: 0
 		grid-gap: 20px
+	.check-more-btn
+		margin-right: 0
 	.video-list
 		margin-top: 35px
 	.video-list
@@ -337,15 +343,681 @@
 
 // ≥768px
 +media-breakpoint-down(sm)
+	.header-row
+		> .header-phone
+			padding-right: 25px
+			p
+				display: none
+			a
+				font-size: 0
+				width: 36px
+				height: 36px
+				border: 1px solid #fff
+				border-radius: 50%
+				display: flex
+				align-items: center
+				justify-content: center
+				margin: 0
+				&:after
+					content: '\e91b'
+					font-family: icon
+					font-size: 19px
+					color: #fff
+					transform: translate(1px, 0)
+	.header
+		padding: 14px 0
+	.main-window-slider-block
+		margin-left: 0
+		.slider-nav-arrow
+			display: none
+	.header-mob-soc
+		display: block
+		margin-top: 25px
+		.soc-nav
+			position: static
+			flex-direction: row
+			justify-content: flex-start
+			a
+				margin: 0 20px 0 0
+	.about-blockquote
+		margin-top: 25px
+	.about-in-nmbrs-item
+		display: none
+	.projects-header-right
+		position: relative
+		height: 100%
+		width: auto
+		margin-left: auto
+	.projects-header-right-icon
+		font-size: 19px
+		color: $gray
+		display: block
+		&:hover
+			& + .projects-header-right-content
+				opacity: 1
+				transform: translateY(0)
+				visibility: visible
+	.projects-header-right-content
+		position: absolute
+		z-index: 5
+		background-color: #fff
+		padding: 20px
+		border-radius: 10px
+		box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1)
+		top: 100%
+		right: 0
+		max-width: 280px
+		transition: all .4s ease
+		opacity: 0
+		visibility: hidden
+		transform: translateY(-10px)
+	.projects-header-left
+		width: calc(100% - 20px)
+	.project-price-info-dropdown
+		left: auto
+		right: 0
+	.select-layout-grid
+		overflow: auto hidden
+		margin: 0 -20px
+		padding: 0 20px
+		width: auto
+		&:after
+			content: ''
+			display: block
+			width: 5px
+			height: 5px
+			flex-shrink: 0
+	.layout-info-wrapper
+		display: block
+	.layout-image
+		width: 100%
+		margin-bottom: 25px
+	.layout-info-block
+		padding-left: 0
+		width: 100%
+	.advantages-grid
+		grid-template-columns: 1fr 1fr
+	.our-services-grid
+		grid-template-columns: 1fr 1fr
+	.contacts-nav
+		margin-bottom: 29px
+		display: grid
+		grid-template-columns: 1fr 1fr
 
 // ≥576px
 +media-breakpoint-down(xs)
-
+	.h3, h3
+		font-size: 20px
+	.h5, h5
+		font-size: 14px
+	.container
+		padding: 0 18px
+	.main-banner-video-item
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center
+		video
+			display: none
+	.main-window
+		padding-top: 97px
+		&:after
+			background-color: rgba(#000, .38)
+		> .soc-nav
+			display: none
+	.main-window-row
+		display: block
+	.main-window-slider-item .h2
+		margin-bottom: 27px
+	.main-window-slider-btns
+		flex-direction: column
+		align-items: flex-start
+		.btn
+			margin-bottom: 30px
+	.s-stocks
+		padding: 27px 0 22px
+	.news-item
+		padding: 9px 29px 11px 15px
+	.news-slider .slick-slide
+		width: 252px !important
+		padding: 0 8px
+	.news-item
+		min-height: 120px
+	.s-about
+		padding-top: 30px
+	.about-title
+		margin-bottom: 19px
+	.video-block
+		padding-bottom: 45.5%
+	.video-play
+		width: 40px
+		height: 40px
+		&:after
+			font-size: 18px
+	.blockquote-content
+		display: none
+	.blockquote-author-text-mob
+		display: block
+		font-size: 14px
+		margin-bottom: 9px
+	.blockquote-author-img
+		margin-right: 19px
+		img
+			width: 84px
+			height: 84px
+	.blockquote-author-text
+		.h5
+			margin-bottom: 1px
+			font-size: 10px
+		p
+			font-size: 10px
+	.about-in-nmbrs
+		margin-top: 23px
+	.about-in-nmbrs-link
+		margin-top: 0
+		font-size: 14px
+	.text-slider-item
+		font-size: 30px
+	.text-slider-item:after
+		width: 51px
+		margin: 0 13px
+		transform: translateY(2px)
+	.s-text-slider
+		margin: 15px 0
+	.s-projects
+		padding-top: 20px
+	.row
+		margin: 0 -6px
+		[class*=col-]
+			padding: 0 6px
+	.project-header
+		padding: 15px
+		margin-bottom: 16px
+	.project-header .stick
+		top: 15px
+		left: 15px
+	.stick
+		height: 18px
+		border-radius: 4px
+		padding: 0 5px
+		font-size: 10px
+		line-height: 17px
+	.project-map-link
+		width: 30px
+		height: 30px
+		font-size: 0
+		display: flex
+		align-items: center
+		justify-content: center
+		top: 15px
+		right: 15px
+		span
+			margin: 0
+			font-size: 16px
+	.project-title
+		p
+			display: none
+		.h3
+			margin-bottom: 0
+	.project-header
+		height: 218px
+		overflow: hidden
+		margin-bottom: 15px
+	.project-descr
+		flex-direction: column-reverse
+	.project-descr-right
+		text-align: left
+		margin-bottom: 7px
+	.project-price-info
+		display: none
+	.project-size
+		display: none
+	.project-distance
+		font-size: 12px
+		align-items: center
+		span
+			font-size: 13px
+			display: flex
+	.label
+		height: 19px
+		line-height: 19px
+		padding: 0 5px
+		font-size: 10px
+		border-radius: 4px
+	.project
+		margin-bottom: 25px
+	.project--big
+		margin-top: 0
+		display: block
+		margin-bottom: 0
+		.project-header
+			width: 100%
+			height: 218px
+		.project-body
+			padding-left: 0
+			width: 100%
+			position: relative
+			padding-top: 15px
+		.project-title
+			position: absolute
+			bottom: 100%
+			z-index: 1
+			color: #fff
+			left: 15px
+			right: 15px
+			p
+				display: block
+			.h3
+				margin-bottom: 9px
+		.project-descr-left
+			width: 50%
+			margin-bottom: 12px
+		.project-price
+			padding-left: 10px
+			position: absolute
+			right: 0
+			top: 13px
+			width: 50%
+			text-align: right
+			display: block
+		.project-size
+			display: block
+			position: absolute
+			width: 50%
+			padding-left: 10px
+			text-align: right
+			top: 35px
+			right: 0
+		.project-descr-right
+			margin: 0
+		.project-labels
+			margin-bottom: 0
+	.s-projects
+		padding-bottom: 20px
+		.section-nmb
+			display: none
+	.s-projects.bg-gray
+		background-color: transparent
+		.label
+			background-color: #F2F2F2
+	.projects-main-title
+		margin-bottom: 20px
+		.h2
+			font-size: 20px
+			font-weight: 500
+	.bg-linear-gray
+		background: none
+	.s-layouts
+		padding-top: 33px
+	.layouts-header
+		position: relative
+		margin-bottom: 25px
+		[class*=col-]
+			position: static
+		.section-nmb
+			position: absolute
+			font-size: 64px
+			top: 4px
+			left: 0
+			margin-bottom: 0
+	.layouts-filter .h2
+		font-size: 21px
+		padding-left: 86px
+	.layouts-filter-nav-link
+		&:before
+			width: 130%
+		&:last-child
+			&:before
+				width: 100%
+	.layouts-filter-nav-link
+		padding-bottom: 14px
+		margin-right: 17px
+	.select-layout-wrapper
+		display: none
+	.layout-image
+		overflow: visible
+		background-color: transparent
+		padding: 0
+	.layout-image-item
+		border-radius: 7px
+		background-color: #F7F7F7
+		border: 1px solid #E1E1E1
+		height: 186px
+		display: inline-flex !important
+		align-items: center
+		justify-content: center
+		img
+			max-width: 90%
+			max-height: 90%
+			flex-shrink: 0
+			transform: none !important
+			opacity: 1 !important
+	.layout-image
+		display: block
+		padding-right: 57px
+		.slick-slide
+			display: block
+			padding-right: 16px
+			> div
+				display: block
+		.slick-list
+			overflow: visible !important
+	.s-layouts
+		overflow: hidden
+	.layout-breadcrumbs
+		margin-bottom: 15px
+	.layout-price
+		font-size: 16px
+		margin-bottom: 18px
+	.layout-info
+		.h3
+			margin-bottom: 4px
+		ul
+			margin-bottom: 25px
+	.layout-btns
+		width: 100%
+		max-width: 100%
+	.btn
+		height: 40px
+		line-height: 40px
+		padding: 0 15px
+		font-size: 12px
+		border-radius: 7px
+	.layout-btn-main
+		display: flex
+		justify-content: space-between
+		.btn
+			display: block
+			width: calc(50% - 4px)
+			padding: 0
+	.layout-btn-items-left
+		display: none
+	.layout-btn-items-right
+		display: none
+	.layout-btn-items-mob
+		display: block
+		width: 100%
+	.advantages-grid
+		display: flex
+		overflow: auto hidden
+		margin-left: -18px
+		margin-right: -18px
+		padding: 0 18px
+		grid-gap: 0
+		&:after
+			content: ''
+			width: 1px
+			height: 1px
+			flex-shrink: 0
+			display: block
+	.advantages-item
+		width: 120px
+		flex-shrink: 0
+		height: 129px
+		min-height: 0 !important
+		position: relative
+		margin-right: 13px
+	.advantages-body
+		position: absolute
+		bottom: 0 !important
+		left: 0 !important
+		right: 0 !important
+		width: 100%
+		z-index: 1
+		color: #fff
+		transform: none !important
+		padding: 15px !important
+		p
+			display: none
+		.h4
+			margin: 0 !important
+			font-size: 12px !important
+			overflow: hidden
+			max-height: 71px
+	.advantages-img
+		height: 129px
+		img
+			height: 100%
+		.stick
+			left: 15px
+			top: 15px
+	.advantages-item.type-2:hover .advantages-body
+		transform: none !important
+	.stick
+		overflow: hidden
+		max-width: calc(100% - 30px)
+		text-overflow: ellipsis
+	.check-more-btn
+		margin-top: 20px
+	.video-list
+		margin-top: 20px
+	.video-list
+		display: flex
+		overflow: auto hidden
+		margin-left: -18px
+		margin-right: -18px
+		padding: 0 18px
+		grid-gap: 0
+		&:after
+			content: ''
+			width: 1px
+			height: 1px
+			flex-shrink: 0
+			display: block
+	.video-item
+		width: 228px
+		flex-shrink: 0
+		margin-right: 17px
+		margin-bottom: 0
+		.video-block
+			padding-bottom: 0
+			min-height: 0
+			height: 159px
+		.video-poster
+			padding-bottom: 0
+		.stick
+			top: 15px
+			left: 15px
+	.video-play:after
+		transform: translateX(2px)
+	.video-content
+		margin-top: 13px
+		.h4
+			font-size: 14px
+	.s-advantages
+		padding-bottom: 35px
+	.s-our-services
+		padding-top: 22px
+	.calculator
+		padding: 21px 25px 29px
+		border-radius: 7px
+	.calculator-header-btn
+		display: none
+	.section-title
+		margin-bottom: 26px
+		p
+			font-size: 12px
+	.calculator-header
+		margin-bottom: 26px
+	.filter-title
+		margin-bottom: 8px
+	.filter-minmax
+		font-size: 10px
+	.form-control
+		height: 37px
+		padding: 0 14px
+	.filter-range-select
+		top: 3px
+		right: 3px
+		.select2-container--default .select2-selection--single
+			height: 31px
+		.select2-container--default .select2-selection--single .select2-selection__rendered
+			line-height: 31px
+		.select2-container--default .select2-selection--single .select2-selection__arrow
+			height: 31px
+	.calculator-results
+		display: block
+	.calcultator-total
+		margin-right: 0
+		display: flex
+		align-items: center
+		margin-bottom: 17px
+	.calcultator-total-price
+		font-size: 30px
+		margin-top: 0
+		margin-left: auto
+		padding-left: 15px
+		white-space: nowrap
+	.calculator-results .btn
+		margin-right: 7px
+	.our-services
+		margin-top: 30px
+	.our-services-grid
+		display: block
+	.our-services-item
+		margin-bottom: 10px
+		border-radius: 7px !important
+	.our-services-item
+		padding: 15px
+		&:after
+			display: none
+	.our-services-link
+		display: block
+		margin-top: 15px
+		.link-angle
+			font-size: 16px
+			span
+				font-size: 11px
+	.our-services-item
+		display: none
+		&:nth-child(1),
+		&:nth-child(2),
+		&:nth-child(3)
+			display: flex
+	.form-group
+		.select2-container--default .select2-selection--single
+			height: 37px
+		.select2-container--default .select2-selection--single .select2-selection__rendered
+			line-height: 37px
+		.select2-container--default .select2-selection--single .select2-selection__arrow
+			height: 37px
+	.form-group
+		margin-bottom: 18px
+	.contacts-phone a
+		font-size: 21px
+	.contacts-mail a
+		font-size: 13px
+	.contacts-links
+		margin-bottom: 19px
+	.contacts-nav-link
+		padding-left: 0
+		padding-right: 0
+		background-color: transparent !important
+		font-size: 10px
+		margin-bottom: 0
+		height: 27px
+	.contacts-map-wrapper
+		margin-bottom: 20px
+	#contacts-map
+		height: 161px
+		border-radius: 10px
+	.open-full-contacts-map
+		width: 38px
+		height: 38px
+		background-size: 28px
+	.footer
+		border-top: none
+		padding-top: 10px
+	.footer-nav
+		display: none
+	.footer-copyright
+		margin-top: 0
+		p
+			font-size: 10px
+			margin-bottom: 20px
+	.footer-copyright-row
+		flex-direction: column-reverse
+	.footer-apps
+		margin-bottom: 25px
+		img
+			width: 111px
+	.footer-copyright p
+		color: $gray
+		font-weight: normal
+	.footer-copyright-left
+		padding-right: 0
+		color: $gray
+		font-weight: normal
+		a
+			color: $gray
+	.footer-dev
+		margin-top: 20px
+		a
+			justify-content: flex-end
+			font-size: 10px
+			img
+				margin-top: 2px
+	#contacts-map-popup .popup-block, #map-popup .popup-block
+		max-width: calc(100vw - 20px)
+	.popup-map
+		padding-bottom: 70%
+	.popup-full-window .popup-block
+		padding-top: 20px
+		padding-bottom: 20px
+	.popup-full-window .popup-close
+		top: 15px
+		right: 15px
+	.full-filter-footer
+		display: block
+	.full-filter-left
+		padding-right: 0
+		margin-bottom: 20px
+	.mortgage-block
+		width: 100%
+	.full-filter-btns
+		padding-bottom: 20px
+		.clear-filter
+			margin-right: auto
+	#video-popup .popup-block
+		width: calc(100vw - 20px)
+	.page-loader
+		display: none !important
 
 /*==========  Mobile First  ==========*/
 
 // ≤576px
 +media-breakpoint-up(sm)
+	.animate
+		transition: transform .5s ease, opacity .5s ease
+		opacity: 0
+		transform: translateY(40px)
+		&.fade-in
+			opacity: 1
+			transform: translateY(0)
+	.main-window
+		&.animate
+			transform: none !important
+			opacity: 1 !important
+			.main-window-projects
+				transition: all .4s ease
+				opacity: 0
+				transform: translateY(40px)
+				transition-delay: .4s
+			.main-window-slider-block
+				transition: all .4s ease
+				opacity: 0
+				transform: translateY(40px)
+				transition-delay: .8s
+			.main-window-footer
+				transition: all .4s ease
+				opacity: 0
+				transform: translateY(40px)
+				transition-delay: 1.2s
+		&.fade-in
+			.main-window-projects,
+			.main-window-slider-block,
+			.main-window-footer
+				opacity: 1
+				transform: translateY(0)
 
 // ≤768px
 +media-breakpoint-up(md)

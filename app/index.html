@@ -30,6 +30,14 @@
 
 <body>
 
+	<div class="page-loader">
+		<div class="page-loader-flex">
+			<div class="logo">
+				<img src="img/logo-dark.svg" alt="">
+			</div>
+		</div>
+	</div>
+
 	<header class="header">
 		<div class="container">
 			
@@ -69,6 +77,14 @@
 							<p>Работаем ежедневно с 10:00 до 20:00</p>
 						</div>
 					</div>
+					<div class="header-mob-soc">
+						<nav class="soc-nav">
+							<a href="#" class="soc-nav-link"><span class="icon-facebook"></span></a>
+							<a href="#" class="soc-nav-link"><span class="icon-instagram"></span></a>
+							<a href="#" class="soc-nav-link"><span class="icon-twitter"></span></a>
+							<a href="#" class="soc-nav-link"><span class="icon-vk"></span></a>
+						</nav>
+					</div>
 				</div>
 
 				<div class="header-burger">
@@ -82,13 +98,13 @@
 		</div>
 	</header>
 
-	<div class="main-window">
+	<div class="main-window animate">
 
 		<div class="main-banner-video">
-			<div class="main-banner-video-item active" style="display: block;">
+			<div class="main-banner-video-item active" data-mob-bg="img/main-banner-mob.jpg" style="display: block;">
 				<video src="video/main-video-1.mp4" muted autoplay loop preload="none"></video>
 			</div>
-			<div class="main-banner-video-item">
+			<div class="main-banner-video-item" data-mob-bg="img/main-banner-mob.jpg">
 				<video src="video/main-video-2.mp4" muted autoplay loop preload="none"></video>
 			</div>
 		</div>
@@ -350,7 +366,7 @@
 
 	</div>
 
-	<section class="s-stocks">
+	<section class="s-stocks animate">
 		<div class="container">
 			
 			<div class="row">
@@ -426,7 +442,7 @@
 		</div>
 	</section>
 
-	<section class="s-about">
+	<section class="s-about animate">
 		<div class="container">
 			
 			<div class="about-row row">
@@ -446,12 +462,13 @@
 
 				<div class="col-lg-3 col-md-4">
 					<div class="about-blockquote">
-						<div class="blockqute-content">Мы строим дома, в которые хочется возвращаться. Нашей целью всегда было не просто проектирование и возведение жилых объектов — мы создаем среду, в которой хотели бы жить сами.</div>
-						<div class="blockqute-author">
-							<div class="blockqute-author-img">
+						<div class="blockquote-content">Мы строим дома, в которые хочется возвращаться. Нашей целью всегда было не просто проектирование и возведение жилых объектов — мы создаем среду, в которой хотели бы жить сами.</div>
+						<div class="blockquote-author">
+							<div class="blockquote-author-img">
 								<img src="img/blockquote-author.png" alt="">
 							</div>
-							<div class="blockqute-author-text">
+							<div class="blockquote-author-text">
+								<div class="blockquote-author-text-mob">Мы строим дома, в которые хочется возвращаться. </div>
 								<div class="h5">Нурмухаметов Руслан<br>Ринатович</div>
 								<p>Генеральный директор</p>
 							</div>
@@ -484,7 +501,7 @@
 		</div>
 	</section>
 
-	<section class="s-text-slider">
+	<section class="s-text-slider animate">
 		<div class="text-slider-wrapper">
 			<div class="text-slider">
 				<div class="text-slider-item">9 жилых комплексов</div>
@@ -494,7 +511,7 @@
 		</div>
 	</section>
 
-	<section class="s-city-map">
+	<section class="s-city-map animate">
 		<div class="container">
 			
 			<div class="city-map-wrapper">
@@ -561,7 +578,7 @@
 		</div>
 	</section>
 
-	<section class="s-projects">
+	<section class="s-projects animate">
 		<div class="container">
 			<div class="row">
 				
@@ -590,21 +607,24 @@
 							<div class="h3">Микрогород «Лаишевский узел» — это место для жизни в гармонии с природой</div>
 						</div>
 						<div class="projects-header-right">
-							<ul>
-								<li><span>113 га</span> площадь микрогорода</li>
-								<li><span>13</span> детских садиков</li>
-								<li><span>3</span> школы</li>
-							</ul>
-							<div class="projects-header-right-btns">
-								<a href="#" class="btn btn-gray">О проекте</a>
-								<a href="#" class="btn">Стать жителем</a>
+							<div class="projects-header-right-icon"><span class="icon-attention"></span></div>
+							<div class="projects-header-right-content">
+								<ul>
+									<li><span>113 га</span> площадь микрогорода</li>
+									<li><span>13</span> детских садиков</li>
+									<li><span>3</span> школы</li>
+								</ul>
+								<div class="projects-header-right-btns">
+									<a href="#" class="btn btn-gray">О проекте</a>
+									<a href="#" class="btn">Стать жителем</a>
+								</div>
 							</div>
 						</div>
 					</div>
 
 					<div class="row">
 						
-						<div class="col-md-4">
+						<div class="col-4">
 							<div class="project">
 								<div class="project-header">
 									<img src="img/projects/2.jpg" alt="">
@@ -659,7 +679,7 @@
 							</div>
 						</div>
 
-						<div class="col-md-4">
+						<div class="col-4">
 							<div class="project">
 								<div class="project-header">
 									<img src="img/projects/3.jpg" alt="">
@@ -775,7 +795,7 @@
 		</div>
 	</section>
 
-	<section class="s-city-map">
+	<section class="s-city-map animate">
 		<div class="container">
 			
 			<div class="city-map-wrapper">
@@ -825,7 +845,7 @@
 		</div>
 	</section>
 
-	<section class="s-projects">
+	<section class="s-projects animate">
 		<div class="container">
 			<div class="row">
 				
@@ -838,21 +858,24 @@
 							<div class="h3">В сердце Приволжского района жилые комплексы «Сказочный лес» и «Палитра» образуют «Волжские просторы», общей площадью 29 га</div>
 						</div>
 						<div class="projects-header-right">
-							<ul>
-								<li><span>29 га</span> площадь микрогорода</li>
-								<li><span>9000</span> жителей</li>
-								<li><span>203 000 м<sup>2</sup></span> площадь</li>
-							</ul>
-							<div class="projects-header-right-btns">
-								<a href="#" class="btn btn-gray">О проекте</a>
-								<a href="#" class="btn">Стать жителем</a>
+							<div class="projects-header-right-icon"><span class="icon-attention"></span></div>
+							<div class="projects-header-right-content">
+								<ul>
+									<li><span>29 га</span> площадь микрогорода</li>
+									<li><span>9000</span> жителей</li>
+									<li><span>203 000 м<sup>2</sup></span> площадь</li>
+								</ul>
+								<div class="projects-header-right-btns">
+									<a href="#" class="btn btn-gray">О проекте</a>
+									<a href="#" class="btn">Стать жителем</a>
+								</div>
 							</div>
 						</div>
 					</div>
 
 					<div class="row">
 						
-						<div class="col-md-4">
+						<div class="col-4">
 							<div class="project">
 								<div class="project-header">
 									<img src="img/projects/5.jpg" alt="">
@@ -906,7 +929,7 @@
 							</div>
 						</div>
 
-						<div class="col-md-4">
+						<div class="col-4">
 							<div class="project">
 								<div class="project-header">
 									<img src="img/projects/6.jpg" alt="">
@@ -969,7 +992,7 @@
 		</div>
 	</section>
 
-	<section class="s-projects bg-gray">
+	<section class="s-projects bg-gray animate">
 		<div class="container">
 			<div class="row">
 				
@@ -1046,7 +1069,7 @@
 		</div>
 	</section>
 
-	<section class="s-projects bg-linear-gray">
+	<section class="s-projects bg-linear-gray animate">
 		<div class="container">
 			<div class="row">
 				
@@ -1062,7 +1085,7 @@
 
 					<div class="row">
 						
-						<div class="col-md-4">
+						<div class="col-4">
 							<div class="project">
 								<div class="project-header">
 									<img src="img/projects/8.jpg" alt="">
@@ -1117,7 +1140,7 @@
 							</div>
 						</div>
 
-						<div class="col-md-4">
+						<div class="col-4">
 							<div class="project">
 								<div class="project-header">
 									<img src="img/projects/9.jpg" alt="">
@@ -1233,7 +1256,7 @@
 		</div>
 	</section>
 
-	<section class="s-layouts">
+	<section class="s-layouts animate">
 		<div class="container">
 
 			<div class="layouts-header">
@@ -1316,13 +1339,13 @@
 					<div class="col-lg-6">
 						<div class="layout-info-wrapper">
 							<div class="layout-image">
-								<img src="img/layout-appartaments.png" data-img="1" alt="">
-								<img src="img/layout-appartaments-2.png" data-img="2" alt="">
-								<img src="img/layout-appartaments.png" data-img="3" alt="">
-								<img src="img/layout-appartaments-2.png" data-img="4" alt="">
-								<img src="img/layout-appartaments.png" data-img="5" alt="">
-								<img src="img/layout-appartaments-2.png" data-img="6" alt="">
-								<img src="img/layout-appartaments.png" data-img="7" alt="">
+								<div class="layout-image-item"><img src="img/layout-appartaments.png" data-img="1" alt=""></div>
+								<div class="layout-image-item"><img src="img/layout-appartaments-2.png" data-img="2" alt=""></div>
+								<div class="layout-image-item"><img src="img/layout-appartaments.png" data-img="3" alt=""></div>
+								<div class="layout-image-item"><img src="img/layout-appartaments-2.png" data-img="4" alt=""></div>
+								<div class="layout-image-item"><img src="img/layout-appartaments.png" data-img="5" alt=""></div>
+								<div class="layout-image-item"><img src="img/layout-appartaments-2.png" data-img="6" alt=""></div>
+								<div class="layout-image-item"><img src="img/layout-appartaments.png" data-img="7" alt=""></div>
 							</div>
 							<div class="layout-info-block">
 								<div class="layout-breadcrumbs">
@@ -1398,7 +1421,9 @@
 								</div>
 								<div class="layout-btns">
 									<div class="layout-btn-main">
+										</style>
 										<a href="#" class="btn btn-lg btn-block">Забронировать квартиру</a>
+										<a href="#" class="btn btn-gray btn-block">Рассчитать ипотеку</a>
 									</div>
 									<div class="layout-btn-items">
 										<div class="layout-btn-items-left">
@@ -1407,6 +1432,9 @@
 										</div>
 										<div class="layout-btn-items-right">
 											<a href="#" class="link-angle">К проекту <span class="icon-angle-right"></span></a>
+										</div>
+										<div class="layout-btn-items-mob">
+											<a href="#" class="btn btn-gray btn-block">Смотреть все предложения</a>
 										</div>
 									</div>
 								</div>
@@ -1420,7 +1448,7 @@
 		</div>
 	</section>
 
-	<section class="s-text-slider">
+	<section class="s-text-slider animate">
 		<div class="text-slider-wrapper">
 			<div class="text-slider">
 				<div class="text-slider-item">Больше, чем просто квартира</div>
@@ -1430,7 +1458,7 @@
 		</div>
 	</section>
 
-	<section class="s-advantages">
+	<section class="s-advantages animate">
 		<div class="container">
 			<div class="row">
 
@@ -1556,7 +1584,7 @@
 		</div>
 	</section>
 
-	<section class="s-our-services">
+	<section class="s-our-services animate">
 		<div class="container">
 
 			<div class="calculator">
@@ -1800,6 +1828,10 @@
 						</div>
 					</div>
 
+					<div class="our-services-link">
+						<a href="#" class="link-angle">Все способы покупки <span class="icon-angle-right"></span></a>
+					</div>
+
 				</div>
 
 			</div>
@@ -1807,7 +1839,7 @@
 		</div>
 	</section>
 
-	<section class="s-text-slider">
+	<section class="s-text-slider animate">
 		<div class="text-slider-wrapper">
 			<div class="text-slider">
 				<div class="text-slider-item">работаем для вас без выходных</div>
@@ -1817,7 +1849,7 @@
 		</div>
 	</section>
 
-	<section class="s-contacts">
+	<section class="s-contacts animate">
 		<div class="container">
 			<div class="row">
 				
@@ -1828,7 +1860,7 @@
 							<div class="h2">Напишите нам</div>
 							<form class="contacts-form">
 								<div class="row">
-									<div class="col-8">
+									<div class="col-sm-8">
 										<div class="form-group white">
 											<select class="select-style">
 												<option value="Запись в офисы продаж">Запись в офисы продаж</option>
@@ -1837,17 +1869,17 @@
 											</select>
 										</div>
 									</div>
-									<div class="col-4">
+									<div class="col-sm-4">
 										<div class="form-group white">
 											<input type="text" class="form-control" placeholder="Имя">
 										</div>
 									</div>
-									<div class="col-4">
+									<div class="col-sm-4">
 										<div class="form-group white">
 											<input type="text" class="form-control phone-mask" placeholder="Телефон">
 										</div>
 									</div>
-									<div class="col-8">
+									<div class="col-sm-8">
 										<div class="form-footer-row">
 											<p>Нажимая “Отправить”, вы соглашаетесь с политикой конфиденциальности</p>
 											<button type="submit" class="btn">Отправить запрос</button>
@@ -1927,7 +1959,7 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-lg-1 col-md-2">
+				<div class="col-lg-1 col-md-2 col-sm-4">
 					<nav class="footer-nav">
 						<div class="h6">Покупателям</div>
 						<ul>
@@ -1941,7 +1973,7 @@
 					</nav>
 				</div>
 
-				<div class="col-lg-1 col-md-2">
+				<div class="col-lg-1 col-md-2 col-sm-4">
 					<nav class="footer-nav">
 						<div class="h6">Способы покупки</div>
 						<ul>
@@ -1954,7 +1986,7 @@
 					</nav>
 				</div>
 
-				<div class="col-lg-1 col-md-2">
+				<div class="col-lg-1 col-md-2 col-sm-4">
 					<nav class="footer-nav">
 						<div class="h6">Жителям</div>
 						<ul>
@@ -1966,7 +1998,7 @@
 					</nav>
 				</div>
 
-				<div class="col-xl-2 col-lg-1 col-md-2">
+				<div class="col-xl-2 col-lg-1 col-md-2 col-sm-4">
 					<nav class="footer-nav">
 						<div class="h6">О нас</div>
 						<ul>

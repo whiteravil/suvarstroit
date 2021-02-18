@@ -31,6 +31,34 @@ body
 		overflow: hidden
 		touch-action: none
 
+.page-loader
+	position: fixed
+	z-index: 1000
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: #fff
+	transition: opacity .4s ease
+	&.hide
+		opacity: 0
+		.logo
+			transform: translateY(-30px)
+
+.page-loader-flex
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	display: flex
+	align-items: center
+	justify-content: center
+	.logo
+		transition: transform .4s ease
+		img
+			width: rem(220px)
+
 b, strong
 	font-weight: bold
 
@@ -173,6 +201,9 @@ section
 		margin: 0
 		color: rgba(#fff, .5)
 
+.header-mob-soc
+	display: none
+
 .main-menu
 	margin-left: auto
 	display: flex
@@ -292,7 +323,7 @@ section
 	display: flex
 	flex-direction: column
 	overflow: hidden
-	margin-bottom: rem(40px)
+	margin-bottom: rem(10px)
 
 .main-window-projects-nav
 	ul
@@ -448,6 +479,7 @@ section
 	transition: transform .8s ease-out
 	overflow: hidden
 	z-index: 1
+	background-size: 0
 	.fade-out
 		z-index: 0
 	&.active
@@ -468,8 +500,7 @@ section
 	flex-grow: 1
 	max-height: 100%
 	overflow: hidden
-	.container
-		height: 100%
+	display: flex
 
 .main-window-footer
 	position: relative
@@ -902,6 +933,7 @@ section
 	width: 100%
 	height: 100%
 	border-radius: rem(6px)
+	overflow: hidden
 	&:after
 		content: ''
 		position: absolute
@@ -943,16 +975,16 @@ section
 .about-blockquote
 	margin-left: rem(38px)
 
-.blockqute-content
+.blockquote-content
 	margin-bottom: rem(30px)
 	font-size: rem(24px)
 	font-weight: normal
 
-.blockqute-author
+.blockquote-author
 	display: flex
 	align-items: center
 
-.blockqute-author-img
+.blockquote-author-img
 	position: relative
 	margin-right: rem(25px)
 	img
@@ -973,7 +1005,7 @@ section
 		line-height: rem(44px)
 		text-align: center
 
-.blockqute-author-text
+.blockquote-author-text
 	.h5
 		margin-bottom: rem(4px)
 	p
@@ -1105,6 +1137,7 @@ section
 	font-weight: normal
 	display: inline-flex !important
 	align-items: center
+	text-transform: uppercase
 	&:after
 		content: ''
 		display: block
@@ -1372,7 +1405,7 @@ section
 		height: 100%
 		border-radius: rem(7px)
 		background: linear-gradient(180deg, rgba(0, 0, 0, 0.2))
-		z-index: -1
+		z-index: 1
 	img
 		position: absolute
 		top: 0
@@ -1382,11 +1415,12 @@ section
 		object-fit: cover
 		border-radius: rem(7px)
 		+tr
-		z-index: -2
+		z-index: 0
 	.stick
 		position: absolute
 		top: rem(24px)
 		left: rem(24px)
+		z-index: 2
 
 .project-map-link
 	position: absolute
@@ -1394,7 +1428,7 @@ section
 	right: rem(24px)
 	white-space: nowrap
 	height: rem(30px)
-	z-index: 1
+	z-index: 2
 	+tr
 	display: inline-flex
 	align-items: center
@@ -1413,6 +1447,8 @@ section
 
 .project-title
 	max-width: rem(400px)
+	position: relative
+	z-index: 2
 	.h3
 		margin-bottom: rem(10px)
 	p
@@ -1828,6 +1864,11 @@ section
 
 .layout-btn-main
 	margin-bottom: rem(12px)
+	.btn-gray
+		display: none
+
+.layout-btn-items-mob
+	display: none
 
 .layout-btn-items
 	display: flex
@@ -1854,12 +1895,11 @@ section
 	display: grid
 	grid-template-columns: repeat(3, 1fr)
 	grid-gap: rem(29px)
-	grid-auto-rows: 1fr
+	// grid-auto-rows: 1fr
 	margin-right: rem(30px)
 	flex-grow: 1
 
 .advantages-item
-	height: 100%
 	overflow: hidden
 	position: relative
 	&.type-2
@@ -1947,6 +1987,7 @@ section
 .check-more-btn
 	text-align: right
 	margin-top: rem(43px)
+	margin-right: rem(30px)
 
 .video-item
 	margin-bottom: rem(34px)
@@ -2039,6 +2080,8 @@ section
 		[class*=col-]
 			padding-left: 10px
 			padding-right: 10px
+	.filter-item
+		margin-right: 0
 
 .calculator-results
 	display: flex
@@ -2638,6 +2681,8 @@ form
 .popup-map
 	position: relative
 	padding-bottom: 46%
+	border-radius: rem(10px)
+	overflow: hidden
 	> div
 		position: absolute
 		top: 0
@@ -2682,6 +2727,16 @@ form
 		text-decoration: none !important
 
 .main-window-search
+	display: none
+
+.projects-header-right-icon
+	display: none
+
+.blockquote-author-text-mob
+	display: none
+
+.our-services-link
+	text-align: right
 	display: none
 
 @import "media" // Always at the end
