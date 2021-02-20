@@ -31,34 +31,6 @@ body
 		overflow: hidden
 		touch-action: none
 
-.page-loader
-	position: fixed
-	z-index: 1000
-	top: 0
-	left: 0
-	width: 100%
-	height: 100%
-	background-color: #fff
-	transition: opacity .4s ease
-	&.hide
-		opacity: 0
-		.logo
-			transform: translateY(-30px)
-
-.page-loader-flex
-	position: absolute
-	top: 0
-	left: 0
-	width: 100%
-	height: 100%
-	display: flex
-	align-items: center
-	justify-content: center
-	.logo
-		transition: transform .4s ease
-		img
-			width: rem(220px)
-
 b, strong
 	font-weight: bold
 
@@ -121,12 +93,28 @@ section
 			&.icon-plus
 				font-size: rem(11px)
 	&.btn-white-border
-		background-color: transparent
+		background-color: transparent !important
 		border: 1px solid #fff
 		line-height: rem(54px)
+		position: relative
+		z-index: 1
+		overflow: hidden
 		&:hover
 			border-color: $red
+			&:after
+				transform: scaleX(1)
+		&:after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
 			background-color: $red
+			z-index: -1
+			transform: scaleX(0)
+			+tr
+			transform-origin: center left
 	&.btn-gray
 		background-color: #F2F2F2
 		color: $text
@@ -200,6 +188,7 @@ section
 	p
 		margin: 0
 		color: rgba(#fff, .5)
+		font-weight: normal
 
 .header-mob-soc
 	display: none
@@ -209,17 +198,38 @@ section
 	display: flex
 	align-items: center
 	margin-right: rem(43px)
+	position: relative
 
 .menu-link
 	+tr
-	color: #fff
+	color: #fff !important
 	text-decoration: none !important
 	margin-right: rem(22px)
 	font-weight: 500
+	position: relative
 	&:last-child
 		margin-right: 0
 	&:hover
 		color: $red
+		span
+			transform: translateY(-15px)
+			opacity: 0
+		&:after
+			transform: translateY(0)
+			opacity: 1
+	span
+		display: inline-block
+		+tr
+	&:after
+		content: attr(data-hover-text)
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		opacity: 0
+		transform: translateY(15px)
+		+tr
 
 .header-burger
 	display: flex
@@ -280,10 +290,22 @@ section
 	top: rem(203px)
 	z-index: 4
 	img
-		width: rem(205px)
+		// width: rem(205px)
+		height: rem(55px)
 		+tr
+		position: relative
+		z-index: 1
 		&:hover
 			transform: translateX(#{rem(10px)})
+	&:after
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		width: rem(50px)
+		background-color: #fff
+		z-index: 0
+		height: 100%
 
 .soc-nav
 	position: absolute
@@ -449,6 +471,10 @@ section
 		z-index: 0
 	span
 		transform: translate(1px, 0)
+	&.ring-animate
+		svg
+			circle
+				animation-name: ringload
 	svg
 		position: absolute
 		top: 0
@@ -457,7 +483,14 @@ section
 		transform: rotate(-90deg)
 		circle
 			stroke-dasharray: 119.38 119.38
-			stroke-dashoffset: 48.38
+			stroke-dashoffset: 119.38
+			animation-timing-function: linear
+
+@keyframes ringload
+	0%
+		stroke-dashoffset: 119.38
+	100%
+		stroke-dashoffset: 0
 
 .main-banner-video
 	position: absolute
@@ -788,6 +821,8 @@ section
 		right: auto !important
 	.slider-prev
 		margin-right: rem(12px)
+	svg
+		display: none !important
 
 .slick-track
 	display: flex
@@ -804,12 +839,14 @@ section
 		margin-right: -#{rem(15px)}
 	.slick-slide
 		opacity: 0
-		transition: all .4s ease
+		transition: all .5s ease
 		padding: 0 rem(15px)
 		&.slick-active
 			opacity: 1
 			& + .slick-slide
 				opacity: 1
+		&.prev-slide
+			transform: translateX(100%)
 
 .news-item
 	display: flex !important
@@ -1025,7 +1062,7 @@ section
 	img
 		width: rem(124px)
 	span
-		font-weight: bold
+		font-weight: 500
 		display: block
 		margin-bottom: rem(3px)
 		font-size: rem(38px)
@@ -1196,6 +1233,9 @@ section
 	font-size: rem(80px)
 	line-height: 1
 	font-weight: 300
+	transition: opacity .4s ease
+	&.fade-out
+		opacity: 0
 	&.big
 		font-size: rem(190px)
 		line-height: 0.75
@@ -1223,14 +1263,14 @@ section
 	transition: color .3s ease
 	cursor: pointer
 	span
-		width: rem(50px)
-		height: rem(50px)
+		width: 50px
+		height: 50px
 		background-color: #fff
 		position: relative
 		z-index: 3
 		flex-shrink: 0
 		border-radius: 50%
-		margin-right: rem(17px)
+		margin-right: (17px)
 		+tr
 		&:after,
 		&:before
@@ -1241,42 +1281,42 @@ section
 			transform: translate(-50%, -50%)
 			background-color: $text
 		&:after
-			width: rem(2px)
-			height: rem(22px)
+			width: 2px
+			height: 22px
 		&:before
-			height: rem(2px)
-			width: rem(22px)
+			height: 2px
+			width: 22px
 
 .city-map-dots-content
 	position: absolute
 	top: -20px
 	left: -20px
-	width: rem(300px)
+	width: 300px
 	background-color: #fff
 	visibility: hidden
 	transition: all .3s ease
 	opacity: 0
 	transform-origin: top left
 	transform: scale(0.75)
-	border-radius: rem(7px)
+	border-radius: 7px
 	overflow: hidden
-	padding: 0 rem(20px) rem(20px)
+	padding: 0 20px 20px
 	box-shadow: 0 0 21px 0 rgba(#000, .15)
 	img
-		width: calc(100% + #{rem(40px)})
-		margin-bottom: rem(20px)
-		margin-left: -#{rem(20px)}
-		border-radius: rem(7px)
+		width: calc(100% + 40px)
+		margin-bottom: 20px
+		margin-left: -20px
+		border-radius: 7px 7px 0 0
 	.h5
-		margin-bottom: rem(13px)
-		font-size: rem(14px)
+		margin-bottom: 13px
+		font-size: 14px
 	p
-		margin-bottom: rem(8px)
-		font-size: rem(12px)
+		margin-bottom: 8px
+		font-size: 12px
 		font-weight: normal
 	.link-angle
-		margin-top: rem(15px)
-		font-size: rem(14px)
+		margin-top: 15px
+		font-size: 14px
 
 .city-map-dots-item-small
 	padding-left: rem(39px)
@@ -1303,6 +1343,15 @@ section
 	overflow: visible
 	padding-bottom: rem(48px)
 
+.projects-nav-wrapper
+	position: absolute
+	top: 0
+	left: rem(40px)
+	height: 100%
+	z-index: 5
+	width: 24%
+	padding-bottom: rem(83px)
+
 .location-nav
 	padding-left: rem(68px)
 	position: sticky
@@ -1313,8 +1362,18 @@ section
 		color: #9595A2
 		margin-bottom: rem(18px)
 		margin-top: rem(30px)
+		+tr
 		&:first-child
 			margin-top: 0
+	&.fixed
+		position: fixed
+		z-index: 10
+	&.light
+		.location-nav-link
+			a
+				color: #fff
+		.h6
+			color: #fff
 
 .location-nav-link
 	margin-bottom: rem(6px)
@@ -1334,7 +1393,7 @@ section
 			background-color: $red
 			top: rem(7px)
 			+tr
-			transform: translateX(#{rem(17px)})
+			transform: translate3d(#{rem(17px)}, 0, 0)
 			opacity: 0
 			+tr
 		&:hover,
@@ -1404,7 +1463,7 @@ section
 		width: 100%
 		height: 100%
 		border-radius: rem(7px)
-		background: linear-gradient(180deg, rgba(0, 0, 0, 0.2))
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%)
 		z-index: 1
 	img
 		position: absolute
@@ -1438,12 +1497,26 @@ section
 	text-decoration: none !important
 	border: 1px solid #fff
 	border-radius: rem(7px)
+	overflow: hidden
 	span
 		font-size: rem(16px)
 		margin-right: rem(6px)
 	&:hover
-		background-color: $red
 		border-color: $red
+		&:after
+			transform: scaleX(1)
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: $red
+		z-index: -1
+		transform: scaleX(0)
+		+tr
+		transform-origin: center left
 
 .project-title
 	max-width: rem(400px)
@@ -1499,7 +1572,6 @@ section
 		& ~ .project-price-info-dropdown
 			opacity: 1
 			visibility: visible
-			transform: translateY(0)
 
 .project-price-info-dropdown
 	position: absolute
@@ -1515,7 +1587,6 @@ section
 	transition: all .4s ease
 	visibility: hidden
 	opacity: 0
-	transform: translateY(-20px)
 	&.right-position
 		left: auto
 		right: -#{rem(8px)}
@@ -1643,6 +1714,7 @@ section
 		background-color: $red
 		width: 100%
 		transform: scaleX(0)
+		+tr
 	&:hover
 		color: $red
 	&.active
@@ -2252,6 +2324,7 @@ section
 
 .s-contacts
 	padding-bottom: rem(50px)
+	overflow: visible
 
 .contacts-form-block
 	border-radius: rem(10px)
@@ -2300,6 +2373,7 @@ form
 	display: flex
 	align-items: flex-end
 	justify-content: flex-end
+	margin-top: rem(-15px)
 	img
 		width: rem(289px)
 
@@ -2398,6 +2472,11 @@ form
 		text-decoration: none !important
 		&:hover
 			color: $gray
+		&:before
+			content: attr(data-text)
+		&.active
+			&:before
+				content: attr(data-close-text)
 
 .footer
 	padding: rem(55px) 0 rem(45px)
@@ -2737,6 +2816,13 @@ form
 
 .our-services-link
 	text-align: right
+	display: none
+
+.s-projects-wrapper
+	position: relative
+	overflow: visible !important
+
+.layouts-body-tab
 	display: none
 
 @import "media" // Always at the end

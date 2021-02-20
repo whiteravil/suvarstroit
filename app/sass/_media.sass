@@ -94,8 +94,10 @@
 	.finance-partner-stick
 		left: auto
 		top: auto
-		right: -112px
+		right: -113px
 		bottom: 200px
+		&:after
+			display: none
 	.soc-nav
 		left: auto
 		right: 20px
@@ -199,6 +201,8 @@
 			bottom: -40px
 			left: 0
 			width: 119px
+	.projects-nav-wrapper
+		display: none !important
 
 // ≥992px
 +media-breakpoint-down(md)
@@ -340,6 +344,19 @@
 		margin-bottom: 20px
 	.switch-checkbox-title
 		font-size: 16px
+	.news-slider .slick-slide.prev-slide
+		transform: none !important
+	.noUi-horizontal .noUi-handle
+		&:before
+			content: ''
+			width: 40px
+			height: 40px
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			position: absolute
+			display: block !important
+			opacity: 0 !important
 
 // ≥768px
 +media-breakpoint-down(sm)
@@ -981,6 +998,36 @@
 		width: calc(100vw - 20px)
 	.page-loader
 		display: none !important
+	.projects-header-left
+		.h3
+			.mob-text
+				& + span
+					display: none
+	.projects-header
+		margin-bottom: 25px
+		.h2
+			font-weight: 500
+			font-size: 20px
+	.advantages-img
+		border-radius: 7px
+		&:after
+			border-radius: 7px
+		&:before
+			border-radius: 7px
+		img
+			border-radius: 7px
+	.video-block
+		border-radius: 7px
+	.video-poster
+		border-radius: 7px
+		img
+			border-radius: 7px
+	.s-our-services
+		margin-bottom: 33px
+	.s-contacts
+		padding-top: 20px
+	.contacts-form-left .h2
+		margin-bottom: 25px
 
 /*==========  Mobile First  ==========*/
 
@@ -992,7 +1039,7 @@
 		transform: translateY(40px)
 		&.fade-in
 			opacity: 1
-			transform: translateY(0)
+			transform: none
 	.main-window
 		&.animate
 			transform: none !important
@@ -1006,7 +1053,7 @@
 				transition: all .4s ease
 				opacity: 0
 				transform: translateY(40px)
-				transition-delay: .8s
+				transition-delay: .6s
 			.main-window-footer
 				transition: all .4s ease
 				opacity: 0
