@@ -659,7 +659,7 @@ section
 .select2-container--default .select2-selection--single
 	background-color: #F2F2F2
 	border: none
-	border-radius: rem(7px)
+	border-radius: rem(7px) !important
 	height: rem(56px)
 
 .select2-container--default .select2-selection--single .select2-selection__rendered
@@ -688,13 +688,32 @@ section
 	transform: rotate(180deg)
 
 .select2-dropdown
-	border-radius: rem(7px)
+	border-radius: rem(7px) !important
 	border: none
 	box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1)
 	overflow: hidden
+	font-size: rem(16px)
+	transform: translateY(#{rem(8px)})
+
+.select2-container--open .select2-dropdown--above
+	transform: translateY(#{rem(-8px)})
+
+.select2-container--default .select2-results>.select2-results__options
+	padding: rem(17px) rem(25px)
+	max-height: rem(224px)
 
 .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable
-	background-color: $red
+	color: $red
+
+.select2-results__option
+	padding: 0
+	background-color: transparent !important
+	margin-bottom: rem(12px)
+	&:last-child
+		margin-bottom: 0
+
+.select2-container--default .select2-results__option--selected
+	color: $red !important
 
 .filter-more-item
 	margin-left: rem(25px)
@@ -2371,6 +2390,44 @@ form
 	.select2-container--default
 		font-size: rem(18px)
 
+.contacts-form-left
+	position: relative
+
+.contacts-form-success
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 1
+	background-color: #F2F2F2
+	padding: rem(68px) rem(74px)
+	opacity: 0
+	visibility: hidden
+	border-radius: rem(10px)
+	+tr
+	.h2
+		margin-bottom: rem(40px)
+	p
+		margin: 0
+		font-size: rem(14px)
+		max-width: rem(300px)
+	&.visible
+		opacity: 1
+		visibility: visible
+
+.success-icon
+	width: rem(45px)
+	height: rem(45px)
+	margin-bottom: rem(25px)
+	background-color: $red
+	background-image: url(../img/icons/checkmark.svg)
+	background-size: 25px
+	background-repeat: no-repeat
+	background-position: center
+	border-radius: 50%
+
+
 .contacts-form-right
 	display: flex
 	align-items: flex-end
@@ -2378,6 +2435,8 @@ form
 	margin-top: rem(-15px)
 	img
 		width: rem(289px)
+		position: relative
+		z-index: 1
 
 .contacts-list
 	padding-top: rem(45px)
@@ -2826,5 +2885,98 @@ form
 
 .layouts-body-tab
 	display: none
+
+.select-with-checkboxes
+	.select2-results__option
+		position: relative
+		padding-left: rem(28px)
+		&:after
+			content: ''
+			position: absolute
+			width: rem(18px)
+			height: rem(18px)
+			border-radius: rem(4px)
+			border: 1px solid #9595A2
+			left: 0
+			top: rem(1px)
+			+tr
+		&:before
+			content: ''
+			position: absolute
+			width: rem(18px)
+			height: rem(18px)
+			border-radius: rem(4px)
+			left: 0
+			top: rem(1px)
+			background-image: url(../img/icons/checkmark-red.svg)
+			background-repeat: no-repeat
+			background-position: center
+			opacity: 0
+			+tr
+			transform: scale(0)
+			background-size: rem(12px)
+		&.select2-results__option--selected
+			&:after
+				border-color: $red
+			&:before
+				opacity: 1
+				transform: scale(1)
+
+.select2-container--default .select2-search--inline .select2-search__field
+	resize: none
+	appearance: none
+
+.select2-container--default
+	.select2-selection--multiple
+		border: none !important
+		border-radius: rem(7px) !important
+		background-color: #F2F2F2
+		padding-bottom: 0
+		height: rem(56px)
+		padding: rem(12px) rem(44px) rem(12px) rem(20px)
+		cursor: pointer !important
+		display: flex
+		align-items: center
+		position: relative
+		&:after
+			content: '\e911'
+			font-family: icon
+			color: $text
+			font-size: rem(12px)
+			+tr
+			display: inline-block
+			position: absolute
+			top: rem(20px)
+			right: rem(20px)
+			+tr
+	&.select2-container--open
+		.select2-selection--multiple
+			&:after
+				transform: rotate(180deg)
+
+.select2-container .select2-selection--multiple .select2-selection__rendered
+	margin-bottom: 0
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice
+	display: inline !important
+	background-color: transparent !important
+	border: none !important
+	padding: 0 !important
+	margin: 0 !important
+	&:last-child:after
+		content: ''
+	&:after
+		content: ', '
+	button
+		display: none !important
+	span
+		background-color: transparent !important
+		border: none !important
+		border-radius: 0 !important
+		padding: 0 !important
+
+.select2-container .select2-search--inline .select2-search__field
+	padding-top: rem(21px)
+	font-weight: 500
 
 @import "media" // Always at the end
