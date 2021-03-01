@@ -8,7 +8,7 @@
 	+tr
 
 ::selection
-	background-color: $red
+	background-color: $accent
 	color: #fff
 
 *:focus
@@ -33,6 +33,11 @@ body
 
 b, strong
 	font-weight: bold
+
+h1, .h1
+	font-weight: 500
+	font-size: rem(80px)
+	line-height: 1.175
 
 h2, .h2
 	font-weight: normal
@@ -77,13 +82,13 @@ section
 	color: #fff
 	+tr
 	border-radius: rem(7px)
-	background-color: $red
+	background-color: $accent
 	text-decoration: none !important
 	font-weight: 500
 	white-space: nowrap
 	&:hover
 		color: #fff
-		background-color: #FC3335
+		background-color: var(--global-hover-color)
 	&.btn-icon
 		display: inline-flex
 		align-items: center
@@ -100,7 +105,7 @@ section
 		z-index: 1
 		overflow: hidden
 		&:hover
-			border-color: $red
+			border-color: $accent
 			&:after
 				transform: scaleX(1)
 		&:after
@@ -110,7 +115,7 @@ section
 			left: 0
 			width: 100%
 			height: 100%
-			background-color: $red
+			background-color: $accent
 			z-index: -1
 			transform: scaleX(0)
 			+tr
@@ -129,9 +134,9 @@ section
 		line-height: rem(54px)
 		color: $text
 		&:hover
-			border-color: $red
+			border-color: $accent
 			color: #fff
-			background-color: $red
+			background-color: $accent
 
 .container
 	padding: 0 rem(40px)
@@ -184,7 +189,7 @@ section
 		text-decoration: none !important
 		margin-bottom: 5px
 		&:hover
-			color: $red
+			color: $accent
 	p
 		margin: 0
 		color: rgba(#fff, .5)
@@ -210,7 +215,7 @@ section
 	&:last-child
 		margin-right: 0
 	&:hover
-		color: $red
+		color: $accent
 		span
 			transform: translateY(-15px)
 			opacity: 0
@@ -330,7 +335,7 @@ section
 	&:last-child
 		margin-bottom: 0
 	&:hover
-		color: $red
+		color: $accent
 
 .main-window-row
 	display: flex
@@ -368,7 +373,7 @@ section
 		text-decoration: none !important
 		+tr
 		&:hover
-			color: $red
+			color: $accent
 			color: rgba(#fff, .75)
 			&:after
 				transform: scaleX(.7)
@@ -532,7 +537,7 @@ section
 .main-window-content
 	flex-grow: 1
 	max-height: 100%
-	overflow: hidden
+	// overflow: hidden
 	display: flex
 
 .main-window-footer
@@ -642,10 +647,10 @@ section
 	width: rem(21px)
 	height: rem(21px)
 	border-radius: 50%
-	background-color: $red
+	background-color: $accent
 	border: none
 	cursor: pointer
-	box-shadow: 0px 0px 8px #ED2426
+	box-shadow: 0px 0px 8px $accent
 	top: -#{rem(9px)}
 	right: -#{rem(10px)}
 	*,
@@ -654,7 +659,7 @@ section
 		display: none !important
 
 .noUi-connect
-	background-color: $red
+	background-color: $accent
 
 .select2-container--default .select2-selection--single
 	background-color: #F2F2F2
@@ -703,7 +708,7 @@ section
 	max-height: rem(224px)
 
 .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable
-	color: $red
+	color: $accent
 
 .select2-results__option
 	padding: 0
@@ -713,7 +718,7 @@ section
 		margin-bottom: 0
 
 .select2-container--default .select2-results__option--selected
-	color: $red !important
+	color: $accent !important
 
 .filter-more-item
 	margin-left: rem(25px)
@@ -901,7 +906,7 @@ section
 			display: none
 		&:hover
 			.h5
-				color: $red
+				color: $accent
 		.h5
 			color: $text
 			margin-bottom: auto
@@ -946,8 +951,13 @@ section
 		background-color: #171723
 		color: #fff
 	&.red
-		background-color: $red
+		background-color: #D90002
 		color: #fff
+	&.border
+		background-color: transparent
+		border: 1px solid #fff
+		color: #fff
+		line-height: rem(28px)
 
 .news-date
 	color: #9595A2
@@ -962,11 +972,11 @@ section
 		font-weight: bold
 		display: block
 	.color
-		color: $red
+		color: $accent
 	&:after
 		content: '\e915'
 		font-family: icon
-		color: $red
+		color: $accent
 		font-size: rem(18px)
 		display: inline-block
 		margin-left: rem(8px)
@@ -1024,7 +1034,7 @@ section
 		content: '\e906'
 		font-family: icon
 		font-size: rem(27px)
-		color: $red
+		color: $accent
 		display: inline-block
 		transform: translateX(3px)
 
@@ -1119,6 +1129,7 @@ section
 	background-color: rgba(#171723, 0)
 	transition: background-color .4s ease
 	overflow-y: auto
+	-webkit-overflow-scrolling: touch
 
 .popup-close
 	width: 21px
@@ -1409,7 +1420,7 @@ section
 			border-radius: 50%
 			width: rem(7px)
 			height: rem(7px)
-			background-color: $red
+			background-color: $accent
 			top: rem(7px)
 			+tr
 			transform: translate3d(#{rem(17px)}, 0, 0)
@@ -1417,7 +1428,7 @@ section
 			+tr
 		&:hover,
 		&.active
-			color: $red
+			color: $accent
 			&:after
 				opacity: 1
 				transform: none
@@ -1521,7 +1532,7 @@ section
 		font-size: rem(16px)
 		margin-right: rem(6px)
 	&:hover
-		border-color: $red
+		border-color: $accent
 		&:after
 			transform: scaleX(1)
 	&:after
@@ -1531,7 +1542,7 @@ section
 		left: 0
 		width: 100%
 		height: 100%
-		background-color: $red
+		background-color: $accent
 		z-index: -1
 		transform: scaleX(0)
 		+tr
@@ -1606,6 +1617,7 @@ section
 	transition: all .4s ease
 	visibility: hidden
 	opacity: 0
+	color: $text
 	&.right-position
 		left: auto
 		right: -#{rem(8px)}
@@ -1647,7 +1659,7 @@ section
 	font-size: rem(14px)
 	&.red
 		background-color: #FDE3E3 !important
-		color: $red
+		color: #D90002
 
 .project--big
 	display: flex
@@ -1730,20 +1742,20 @@ section
 		bottom: 0
 		left: 0
 		height: 3px
-		background-color: $red
+		background-color: $accent
 		width: 100%
 		transform: scaleX(0)
 		+tr
 	&:hover
-		color: $red
+		color: $accent
 	&.active
-		color: $red
+		color: $accent
 		&:after
 			transform: scaleX(1)
 	span
 		top: -.5em
 		text-transform: uppercase
-		color: $red
+		color: $accent
 		position: relative
 		font-size: 75%
 		line-height: 0
@@ -1767,7 +1779,7 @@ section
 	top: 0
 	left: 0
 	border-radius: rem(7px)
-	border: 1px solid $red
+	border: 1px solid $accent
 	z-index: 1
 	width: rem(80px)
 	height: rem(80px)
@@ -1831,8 +1843,8 @@ section
 		line-height: 1
 		margin-top: rem(5px)
 	&:hover
-		border-color: $red
-		color: $red
+		border-color: $accent
+		color: $accent
 
 .layout-info-wrapper
 	display: flex
@@ -1908,7 +1920,7 @@ section
 		+tr
 		text-decoration: none !important
 		&:hover
-			color: $red
+			color: $accent
 
 .layout-info-slider
 	.slick-current
@@ -1940,13 +1952,13 @@ section
 				left: 0
 				width: rem(4px)
 				height: rem(4px)
-				background-color: $red
+				background-color: $accent
 				border-radius: 50%
 
 
 .layout-price
 	font-size: rem(20px)
-	color: $red
+	color: $accent
 	margin-bottom: rem(36px)
 
 .layout-btns
@@ -2233,7 +2245,7 @@ section
 		width: rem(8px)
 		top: rem(6px)
 		border-radius: 50%
-		background-color: $red
+		background-color: $accent
 		left: 50%
 		margin-left: -#{rem(4px)}
 
@@ -2268,7 +2280,7 @@ section
 	&:nth-child(7)
 		border-radius: 0 0 rem(7px) 0
 	&:hover
-		background-color: $red
+		background-color: $accent
 		color: #fff
 		.our-services-item-icon
 			svg
@@ -2316,6 +2328,10 @@ section
 		z-index: 1
 		*
 			transition: all .4s ease
+		.replace-stroke
+			stroke: var(--global-accent-color)
+		.replace-fill
+			fill: var(--global-accent-color)
 	img
 		position: relative
 		z-index: 1
@@ -2330,6 +2346,7 @@ section
 		top: rem(7px)
 		left: rem(7px)
 		transition: all .4s ease
+
 
 .our-services-item-left
 	position: relative
@@ -2420,7 +2437,7 @@ form
 	width: rem(45px)
 	height: rem(45px)
 	margin-bottom: rem(25px)
-	background-color: $red
+	background-color: $accent
 	background-image: url(../img/icons/checkmark.svg)
 	background-size: 25px
 	background-repeat: no-repeat
@@ -2451,12 +2468,12 @@ form
 		+tr
 		text-decoration: none !important
 		&:hover
-			color: $red
+			color: $accent
 
 .contacts-mail
 	a
 		font-weight: normal
-		color: $red
+		color: $accent
 		text-decoration: none !important
 		+tr
 		&:hover
@@ -2528,7 +2545,7 @@ form
 
 .contacts-map-objects-all
 	a
-		color: $red
+		color: $accent
 		+tr
 		text-decoration: none !important
 		&:hover
@@ -2564,7 +2581,7 @@ form
 		+tr
 		text-decoration: none !important
 		&:hover
-			color: $red
+			color: $accent
 
 .footer-copyright
 	p
@@ -2587,7 +2604,7 @@ form
 		text-decoration: none !important
 		+tr
 		&:hover
-			color: $red
+			color: $accent
 
 .footer-dev
 	margin-top: 31px
@@ -2695,7 +2712,7 @@ form
 			width: rem(12px)
 			height: rem(12px)
 			border-radius: rem(4px)
-			background-color: $red
+			background-color: $accent
 			top: rem(4px)
 			left: rem(6px)
 			+tr
@@ -2810,7 +2827,7 @@ form
 	margin-right: rem(32px)
 	white-space: nowrap
 	&:hover
-		color: $red
+		color: $accent
 
 #map-popup,
 #contacts-map-popup
@@ -2917,7 +2934,7 @@ form
 			background-size: rem(12px)
 		&.select2-results__option--selected
 			&:after
-				border-color: $red
+				border-color: $accent
 			&:before
 				opacity: 1
 				transform: scale(1)
@@ -2978,5 +2995,119 @@ form
 .select2-container .select2-search--inline .select2-search__field
 	padding-top: rem(21px)
 	font-weight: 500
+
+.select2-results__options
+  -webkit-overflow-scrolling: touch
+
+.main-window-global-info
+	flex-grow: 1
+	color: #fff
+	padding-right: rem(130px)
+	padding-left: rem(20px)
+
+.main-window-global-info-title
+	display: flex
+	align-items: flex-start
+	h1, .h1
+		margin: 0 rem(15px) 0 0
+
+.main-window-global-info-address
+	font-weight: normal
+	margin-top: rem(5px)
+	font-size: rem(20px)
+
+.main-window-global-info-list
+	display: flex
+	margin-top: rem(41px)
+	.project-descr-right
+		text-align: left
+		margin-right: rem(39px)
+	.project-price-val
+		font-size: rem(32px)
+	.project-price-info-icon
+		color: rgba(#fff, .6)
+	.project-size
+		color: #fff
+	.project-price
+		margin-bottom: 0
+
+.main-footer-nav
+	flex-grow: 1
+	margin-top: auto
+	margin-bottom: auto
+	white-space: nowrap
+	> ul
+		list-style-type: none
+		padding: 0
+		margin: 0
+		display: flex
+		align-items: center
+		> li
+			margin-right: rem(25px)
+	a
+		color: #fff
+		text-decoration: none !important
+		transition: color .3s ease
+		&:hover,
+		&.active
+			color: rgba(#fff, .6)
+
+.has-child
+	position: relative
+	&.active
+		span
+			&:after
+				transform: rotate(180deg)
+		ul
+			opacity: 1
+			visibility: visible
+			transform: translateY(0)
+	span
+		color: #fff
+		display: inline-flex
+		align-items: center
+		cursor: pointer
+		&:after
+			content: '\e911'
+			font-family: icon
+			font-size: rem(12px)
+			margin-left: rem(6px)
+			+tr
+	ul
+		position: absolute
+		bottom: calc(100% + #{rem(15px)})
+		right: 0
+		border-radius: rem(7px) !important
+		border: none
+		box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1)
+		overflow: hidden
+		font-size: rem(16px)
+		transform: translateY(#{rem(8px)})
+		z-index: 5
+		background-color: #fff
+		list-style-type: none
+		margin: 0
+		padding: 0
+		white-space: nowrap
+		padding: rem(21px) rem(23px)
+		+tr
+		opacity: 0
+		transform: translateY(-#{rem(5px)})
+		visibility: hidden
+		li
+			margin-bottom: rem(9px)
+			&:last-child
+				margin-bottom: 0
+		a
+			color: #000
+			&:hover
+				color: $accent
+
+.main-footer-btn
+	.btn
+		display: block
+
+.main-window-footer-type-2
+	padding: rem(24px) 0
 
 @import "media" // Always at the end
