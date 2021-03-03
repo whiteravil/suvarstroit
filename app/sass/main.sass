@@ -137,6 +137,18 @@ section
 			border-color: $accent
 			color: #fff
 			background-color: $accent
+	.loader
+		width: rem(30px)
+		height: rem(30px)
+		top: 50%
+		left: 50%
+		margin-top: -#{rem(15px)}
+		margin-left: -#{rem(15px)}
+	&.btn-loading
+		color: transparent !important
+		.loader-ellipsis
+			visibility: visible
+			opacity: 1
 
 .container
 	padding: 0 rem(40px)
@@ -412,6 +424,7 @@ section
 
 .main-window-slider-item
 	color: #fff
+	padding-bottom: rem(30px)
 	.h2
 		margin-bottom: rem(50px)
 
@@ -824,15 +837,23 @@ section
 .s-stocks
 	padding: rem(70px) 0
 	background-color: #F2F2F2
+	&.no-bg
+		background-color: transparent
 
 .stocks-left
 	display: flex
 	flex-direction: column
 	position: relative
 	z-index: 1
+	height: 100%
 
 .stocks-title
 	margin-bottom: rem(40px)
+	flex-grow: 1
+	max-width: 259px
+	p
+		font-size: rem(20px)
+		margin: rem(25px) 0 0
 
 .stocks-nav
 	display: flex
@@ -1399,6 +1420,10 @@ section
 	padding-left: rem(68px)
 	position: sticky
 	top: rem(30px)
+	.white
+		color: #fff !important
+		a
+			color: #fff !important
 	.h6
 		text-transform: uppercase
 		font-size: rem(10px)
@@ -2389,8 +2414,8 @@ section
 .contacts-form-left
 	flex-grow: 1
 	padding: rem(36px) 0 rem(57px) rem(49px)
-	.h2
-		margin-bottom: rem(65px)
+	// .h2
+	// 	margin-bottom: rem(65px)
 
 .form-group
 	margin-bottom: rem(22px)
@@ -2420,6 +2445,7 @@ form
 		margin-left: auto
 
 .contacts-form
+	margin-top: rem(65px)
 	.select2-container--default
 		font-size: rem(18px)
 
@@ -3339,6 +3365,7 @@ form
 		object-fit: cover
 		+tr
 		opacity: 0
+		cursor: pointer
 	.slick-slide
 		position: relative
 		padding: 0 rem(7px)
@@ -3360,6 +3387,7 @@ form
 			z-index: 1
 			text-align: center
 			line-height: rem(82px)
+			cursor: pointer
 		&.slick-current
 			&:after
 				opacity: 1
@@ -3396,5 +3424,165 @@ form
 		transform: translateY(-50%)
 		z-index: 2
 		color: #fff
+
+.live-in-rescom-img
+	position: relative
+	padding-bottom: 100%
+	margin-bottom: rem(27px)
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+		position: absolute
+		top: 0
+		left: 0
+		border-radius: rem(10px)
+
+.slider-live-in-rescom
+	.slick-list
+		margin: 0 -#{rem(15px)}
+		overflow: visible
+	.slick-slide
+		padding: 0 rem(15px)
+		opacity: 0
+		transition: all .5s ease
+		&.slick-active
+			opacity: 1
+			& + .slick-slide
+				opacity: 1
+		&.prev-slide
+			transform: translateX(100%)
+
+.loader-ellipsis
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	display: flex
+	align-items: center
+	justify-content: center
+	+tr
+	visibility: hidden
+	opacity: 0
+	span
+		position: relative
+		width: 6px
+		height: 6px
+		display: block
+		border-radius: 50%
+		flex-shrink: 0
+		animation: blinking 1.2s linear 0s infinite
+		animation-delay: .2s
+		background-color: rgba(#fff, .2)
+		&:after,
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			width: 100%
+			height: 100%
+			border-radius: 50%
+			animation: blinking 1.2s linear 0s infinite
+			background-color: rgba(#fff, .2)
+		&:before
+			left: -10px
+			animation-delay: 0s
+		&:after
+			right: -10px
+			animation-delay: .4s
+
+@keyframes blinking
+	0%
+		background-color: rgba(#fff, .2)
+	50%
+		background-color: rgba(#fff, 1)
+	100%
+		background-color: rgba(#fff, .2)
+
+.videos-slider-item-grid
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	grid-gap: rem(30px)
+
+.videos-item-big
+	grid-column: 2 span
+	grid-row: 3 span
+	min-height: 100%
+	.video-block
+		min-height: 100%
+		.video-play
+			white-space: nowrap
+
+.videos-item
+	position: relative
+	border-radius: rem(7px)
+	overflow: hidden
+	display: flex
+	flex-direction: column
+	align-items: flex-start
+	padding: rem(30px) rem(30px) rem(25px)
+	height: 100%
+	min-height: rem(157px)
+	&:hover
+		.videos-item-bg
+			img
+				transform: scale(1.05)
+	&:after
+		content: ''
+		border-radius: rem(7px)
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(#000, .5)
+		z-index: 1
+	.stick
+		position: relative
+		z-index: 2
+		margin-bottom: auto
+
+.videos-item-bg
+	img
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 0
+		border-radius: rem(7px)
+		width: 100%
+		height: 100%
+		object-fit: cover
+		+tr
+
+.videos-item-text
+	position: relative
+	z-index: 2
+	margin-top: 20px
+	color: #fff
+
+.videos-slider
+	.slick-slide
+		padding: 0 rem(15px)
+	.slick-list
+		margin: 0 -#{rem(15px)}
+
+.contacts-form-descr
+	margin-bottom: rem(39px)
+	font-size: rem(18px)
+	margin-top: rem(15px)
+	margin-bottom: rem(-30px)
+	img
+		max-width: rem(28px)
+		max-height: rem(28px)
+		object-fit: contain
+		margin-left: rem(4px)
+
+.videos-item-link
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 3
 
 @import "media" // Always at the end
