@@ -101,10 +101,10 @@
 
 		<div class="main-banner-video">
 			<div class="main-banner-video-item active" data-mob-bg="img/main-banner-mob.jpg" style="display: block;">
-				<video src="video/main-video-1.mp4" muted autoplay loop preload="none"></video>
+				<video src="video/main-video-3.mp4" muted autoplay loop preload="none"></video>
 			</div>
 			<div class="main-banner-video-item" data-mob-bg="img/main-banner-mob.jpg">
-				<video src="video/main-video-2.mp4" muted autoplay loop preload="none"></video>
+				<video src="video/main-video-4.mp4" muted autoplay loop preload="none"></video>
 			</div>
 		</div>
 
@@ -292,7 +292,7 @@
 
 					<div class="filter-item">
 						<div class="filter-title">Площадь, м<sup>2</sup></div>
-						<div class="filter-range">
+						<div class="filter-range" data-for="#filter-range-2" id="filter-range-1">
 							<div class="filter-range-inputs">
 								<div class="filter-range-input-group">
 									<span>от</span>
@@ -309,7 +309,7 @@
 
 					<div class="filter-item">
 						<div class="filter-title">Стоимость, ₽</div>
-						<div class="filter-range">
+						<div class="filter-range" data-for="#filter-range-4" id="filter-range-3">
 							<div class="filter-range-inputs">
 								<div class="filter-range-input-group">
 									<span>от</span>
@@ -327,7 +327,7 @@
 					<div class="filter-item">
 						<div class="filter-title">Жилой комплекс</div>
 						<div class="filter-select">
-							<select class="select-style">
+							<select class="select-style" data-for="#select-rescom-2" id="select-rescom-1">
 								<option value="Южный парк">Южный парк</option>
 								<option value="Столичный">Столичный</option>
 								<option value="Станция Спортивная">Станция Спортивная</option>
@@ -2999,7 +2999,7 @@
 										<div class="filter-item">
 											<div class="filter-title">Жилой комплекс</div>
 											<div class="filter-select">
-												<select class="select-style">
+												<select class="select-style" data-for="#select-rescom-1" id="select-rescom-2">
 													<option value="Южный парк">Южный парк</option>
 													<option value="Столичный">Столичный</option>
 													<option value="Станция Спортивная">Станция Спортивная</option>
@@ -3048,7 +3048,7 @@
 										<div class="filter-item">
 											<div class="filter-title">Срок сдачи</div>
 											<div class="filter-select">
-												<select class="select-style">
+												<select class="select-style safasfasfasf">
 													<option value="Неважно">Неважно</option>
 													<option value="2020">2020</option>
 													<option value="2021">2021</option>
@@ -3061,7 +3061,7 @@
 									<div class="col-lg-2 col-md-4">
 										<div class="filter-item">
 											<div class="filter-title">Стоимость, ₽</div>
-											<div class="filter-range">
+											<div class="filter-range" data-for="#filter-range-3" id="filter-range-4">
 												<div class="filter-range-inputs">
 													<div class="filter-range-input-group">
 														<span>от</span>
@@ -3079,7 +3079,7 @@
 									<div class="col-lg-2 col-md-4">
 										<div class="filter-item">
 											<div class="filter-title">Площадь, м<sup>2</sup></div>
-											<div class="filter-range">
+											<div class="filter-range" data-for="#filter-range-1" id="filter-range-2">
 												<div class="filter-range-inputs">
 													<div class="filter-range-input-group">
 														<span>от</span>
@@ -3209,12 +3209,12 @@
 											<div class="switch-checkbox">
 												<div class="switch-checkbox-title">В ипотеку</div>
 												<label class="switch-checkbox-label">
-													<input type="checkbox" class="switch-checkbox-input">
+													<input type="checkbox" class="switch-checkbox-input" checked>
 													<span></span>
 												</label>
 											</div>
 										</div>
-										<div class="mortgage-form">
+										<div class="mortgage-form" style="display: block;">
 											<div class="row">
 												<div class="col-lg-auto">
 													<div class="filter-item">

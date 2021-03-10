@@ -520,6 +520,84 @@ $(function() {
 
 	});
 
+	let canChangeSlider = true;
+
+	function cloneValueForSliders() {
+
+		$('.filter-range').each(function() {
+
+			let ths = $(this),
+					range = ths.find('.filter-range-slider')[0];
+
+			if ( range != undefined ) {
+
+				if ( range.classList.contains('noUi-target') ) {
+					range.noUiSlider.on('update', function (values, handle) {
+						parseFloat(values[handle]) == parseInt(values[handle]) ? values[handle] = parseInt(values[handle]) : values[handle] = parseFloat(values[handle]);
+						if ( ths.data('for') != undefined && canChangeSlider ) {
+							let cloneId = ths.data('for'),
+									cloneRange = $(cloneId).find('.filter-range-slider')[0].noUiSlider;
+							canChangeSlider = false;
+							cloneRange.setHandle(0, parseFloat(values[0]));
+							cloneRange.setHandle(1, parseFloat(values[1]));
+							canChangeSlider = true;
+						}
+					});
+				}
+
+			}
+
+		});
+
+		$('.filter-range-solo').each(function() {
+			let ths = $(this),
+					range = ths.find('.filter-range-slider')[0];
+
+			if ( range != undefined ) {
+
+				if ( range.classList.contains('noUi-target') ) {
+					range.noUiSlider.on('update', function (values, handle) {
+						parseFloat(values[0]) == parseInt(values[0]) ? values[0] = parseInt(values[0]) : values[0] = parseFloat(values[0]);
+						if ( ths.data('for') != undefined && canChangeSlider ) {
+							let cloneId = ths.data('for'),
+									cloneRange = $(cloneId).find('.filter-range-slider')[0].noUiSlider;
+							canChangeSlider = false;
+							cloneRange.noUiSlider.setHandle(null, parseFloat(values[0]));
+							canChangeSlider = true;
+						}
+					});
+				}
+
+			}
+
+		});
+
+	}
+
+	function updateMinMaxForRangeSliders(selector) {
+		$(selector).each(function() {
+			let ths = $(this),
+					inpFrom = ths.find('.filter-range-input.from'),
+					inpTo = ths.find('.filter-range-input.to'),
+					min = inpFrom.data('min'),
+					max = inpTo.data('max'),
+					range = ths.find('.filter-range-slider')[0];
+
+			if ( range != undefined ) {
+
+				if ( range.classList.contains('noUi-target') ) {
+					range.noUiSlider.updateOptions({
+						range: {
+							min: parseFloat(min),
+							max: parseFloat(max)
+						}
+					}, true)
+				}
+
+			}
+		});
+	}
+
 	$('.calculator-form input').on('input', calculatorLoader);
 	$('.calculator-form select').on('change', calculatorLoader);
 
@@ -984,6 +1062,23 @@ $(function() {
   	openPopup('#video-popup');
 	});
 
+	// $('.select-style').each(function() {
+	// 	let ths = $(this),
+	// 			currVal = ths.val(),
+	// 			syncId = ths.data('for');
+	// 	if ( syncId != undefined ) {
+	// 		ths.on('change', function() {
+	// 			let newVal = $(this).val();
+	// 			$(syncId).val(newVal);
+	// 			$(syncId).trigger('change.select2')
+	// 		});
+	// 	}
+	// });
+
+	function updateSelect(selector) {
+		$(selector).trigger('change.select2');
+	}
+
   $(window)
   .on('scroll', function() {
   	// $('.text-slider-wrapper').each(function() {
@@ -1015,6 +1110,7 @@ $(function() {
   	}
   	$(window).trigger('resize');
   	adaptiveHeader();
+  	cloneValueForSliders();
   })
   .on('resize', function() {
   	projectHelpInfoPosition();
