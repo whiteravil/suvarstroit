@@ -90,6 +90,7 @@
 		flex-grow: 0
 		text-align: right
 		margin-left: auto
+		margin-right: 50px
 	.main-window-projects
 		display: none
 	.main-window-slider-block
@@ -219,6 +220,120 @@
 		margin-top: 15px
 	.contacts-form-descr
 		margin-bottom: 15px
+	.main-window--rescom
+		.main-window-row
+			display: block
+		.main-window-slider-block
+			margin-top: 85px
+			margin-left: 0
+		.slider-next
+			left: 40px
+			top: -55px
+		.slider-prev
+			left: 0
+			top: -55px
+	.main-window-global-info-list
+		margin-top: 15px
+	.main-window-global-info
+		padding-left: 0
+	.res-complex-descr-text
+		.about-in-nmbrs
+			margin-left: -10px
+			margin-right: -10px
+		.about-in-nmbrs-item
+			padding-left: 10px
+			padding-right: 10px
+			font-size: 10px
+			span
+				font-size: 40px
+				padding-top: 0
+	.rescom-advantages-title
+		font-size: 16px
+	.rescom-advantages-grid
+		grid-gap: 30px 40px
+	.s-global-info
+		padding-top: 60px
+	.block-info-text .h3
+		font-size: 18px
+	.block-info.big .block-info-text .h3
+		font-size: 33px
+	.block-info-grid
+		grid-gap: 20px
+		margin-bottom: 50px
+	.block-info-chess-item-text
+		padding-top: 20px
+		.h2
+			margin-bottom: 20px
+		.btn
+			margin-top: 10px
+		p
+			font-size: 12px
+			&.big-text
+				font-size: 18px
+		ul
+			font-size: 12px
+			li
+				&:after
+					top: 6px
+					width: 4px
+					height: 4px
+	.block-info-chess-item
+		margin-bottom: 50px
+	.block-info-big-banner-text
+		padding: 40px
+		.h1
+			font-size: 36px
+		p
+			font-size: 16px
+	.block-info-icontext
+		margin-left: 10px
+	.block-info-leftright-text
+		margin-bottom: 50px
+	.block-info-img-with-list-text
+		padding: 20px 20px 40px
+	.block-info-img-with-list-grid
+		margin-bottom: 50px
+		grid-gap: 20px
+	.block-info-text
+		padding: 15px
+	.block-info.type-2
+		min-height: 270px
+		.block-info-text
+			.h3
+				font-size: 18px
+	.block-info-type-3-img
+		margin-bottom: 20px
+	.block-info-type-3-text .mute-text
+		font-size: 14px
+	.block-info-type-3-text p
+		font-size: 14px
+	.block-info-big
+		margin-bottom: 50px
+	.block-info-text-imgleft
+		margin-left: -10px
+		margin-right: -10px
+		margin-bottom: 50px
+	.block-info-text-imgleft-img
+		padding-left: 10px
+		padding-right: 10px
+	.block-info-text-imgleft-text
+		padding-right: 10px
+		padding-left: 30px
+		p
+			font-size: 16px
+	.videos-slider-item-grid
+		grid-gap: 20px
+	.menu-body-item
+		padding-left: 25px
+		padding-right: 25px
+		&:first-child
+			padding-left: 20px
+	.menu-list-big a
+		font-size: 16px
+	.menu-body-item-title
+		font-size: 16px
+	.menu-list a
+		font-size: 12px
 
 // ≥992px
 +media-breakpoint-down(md)
@@ -373,6 +488,54 @@
 			position: absolute
 			display: block !important
 			opacity: 0 !important
+	.main-window--rescom
+		.main-window-footer
+			display: block !important
+	.res-complex-logo
+		margin-bottom: 30px
+		img
+			max-width: 150px
+	.res-complex-descr-item .video-block
+		margin-bottom: 25px
+	.position-info
+		margin-bottom: 50px
+		.section-title
+			display: flex
+			align-items: center
+			.h2
+				flex-grow: 1
+				margin: 0 20px 0 0
+	.s-position
+		background-position: center
+	.position-slider-wrapper
+		.stocks-left
+			align-items: flex-start
+			.section-title
+				flex-grow: 1
+				margin: 0 20px 0 0
+				.h2
+					margin: 0
+			.stocks-nav
+				margin-top: 0
+	.global-info-nav
+		display: none
+	.block-info-big-banner-text
+		padding: 30px
+		.h1
+			font-size: 30px
+			margin-bottom: 15px
+	.select-layout-filter
+		.filter-checkbox
+			justify-content: flex-start
+	.photos-gallery-thumbs
+		margin-left: 110px
+	.s-stocks
+		.stocks-left
+			align-items: flex-start
+			.stocks-title
+				max-width: none
+			.stocks-nav
+				margin-top: 0
 
 // ≥768px
 +media-breakpoint-down(sm)
@@ -476,6 +639,129 @@
 		margin-bottom: 29px
 		display: grid
 		grid-template-columns: 1fr 1fr
+	.main-window--rescom .main-window-slider-block
+		margin-top: 40px
+	.main-window-global-info-title
+		h1, .h1
+			font-size: 40px
+	.s-res-complex-descr
+		padding-top: 40px
+	.res-complex-descr-item
+		margin-bottom: 40px
+	.block-info-grid
+		grid-gap: 10px
+	.block-info-chess-item
+		flex-direction: column-reverse !important
+	.block-info-chess-item-img
+		width: 100%
+		img
+			height: 250px
+			object-fit: cover
+	.block-info-chess-item-text
+		width: 100%
+	.block-info-big-banner-img
+		&:after
+			background-color: rgba(#000, .5)
+	.block-info-big-banner-text
+		padding: 20px
+		.h1
+			font-size: 27px
+		p
+			font-size: 14px
+	.block-info-leftright-text
+		display: block
+		margin-bottom: 35px
+	.block-info-leftright-text p
+		max-width: none
+	.block-info-leftright-text-col
+		margin-bottom: 15px
+	.block-info-leftright-text p
+		font-size: 14px
+	.block-info-img-with-list-grid
+		grid-gap: 10px
+	.block-info-type-3
+		grid-column: span 2
+		margin-bottom: 25px
+		&:last-child
+			margin-bottom: 0
+	.block-info-text-imgleft-text
+		padding-left: 10px
+		.h2
+			margin-bottom: 15px
+	.block-info-card-header
+		height: 210px
+		padding: 20px
+		.h3
+			font-size: 16px
+	.block-info-card-body
+		padding: 20px 20px 30px
+	.layout-info-slider
+		max-width: 100%
+	.s-master-plan
+		padding-top: 20px
+	.master-plan-img .btn
+		top: 15px
+		right: 15px
+	.cardinal-points
+		bottom: 15px
+		right: 15px
+		img
+			width: 60px
+	.photos-gallery-thumbs
+		margin-left: 0
+		.slick-arrow
+			display: none !important
+	.photos-gallery-thumbs-wrapper
+		bottom: 20px
+	.s-photos .section-title
+		top: 20px
+	.videos-slider-item-grid
+		grid-gap: 10px
+	.menu
+		transform: translate(100%, 0)
+		left: auto
+		right: 0
+		height: 100%
+		// background: #000
+		// backdrop-filter: none
+		width: 300px
+		display: flex
+		flex-direction: column
+		&.opened
+			transform: translate(0, 0)
+	.menu-header-close
+		margin-top: -4px
+	.menu-body
+		display: block
+		flex-grow: 1
+		overflow-y: auto
+		padding-bottom: 30px
+	.menu-body-item
+		width: 100%
+		padding: 20px !important
+		&:first-child
+			padding-top: 0 !important
+		&:last-child
+			&:before
+				display: none
+		&:after
+			display: none
+		&:before
+			content: ''
+			position: absolute
+			background-color: rgba(#fff, .15)
+			left: 0
+			right: 0
+			bottom: 0
+			height: 1px
+	.menu-header
+		position: static
+		padding: 30px 0
+	.header-burger
+		top: 28px
+		right: 20px
+	.header-phone
+		margin-right: 30px
 
 // ≥576px
 +media-breakpoint-down(xs)
@@ -1054,6 +1340,151 @@
 			margin: 0
 		p
 			display: none
+	.main-window-global-info
+		padding-right: 0
+	.main-window-global-info-title
+		h1, .h1
+			font-size: 27px
+	.main-window-global-info-address
+		font-size: 14px
+	.main-window-global-info-list
+		.project-descr-right
+			margin-right: 10px
+		.project-price-val
+			font-size: 14px
+	.main-window--rescom .main-window-slider-block
+		margin-top: 25px
+	.main-footer-nav
+		display: none
+	.main-footer-btn
+		width: 100%
+		.btn
+			width: 100%
+			height: 37px
+			line-height: 34px
+	.small-stocks-title
+		margin-bottom: 25px
+	.small-stocks-slider
+		.small-stocks-title
+			margin-bottom: 0
+		.slider-next
+			right: 0
+			bottom: calc(100% - 4px)
+			top: auto
+		.slider-prev
+			bottom: calc(100% - 4px)
+			top: auto
+			right: 50px
+	.video-play span
+		display: none
+	.rescom-advantages-grid
+		grid-gap: 20px
+		grid-template-columns: repeat(2, 1fr)
+	.s-position
+		.section-title
+			display: block
+			.h2
+				margin-bottom: 20px
+	.main-window--rescom
+		.main-window-slider-btns
+			display: flex
+			flex-direction: row
+			.btn
+				margin-right: 10px
+	.s-global-info
+		overflow: hidden
+		padding-top: 30px
+		.text-slider-wrapper
+			margin-bottom: 30px
+	.block-info-grid
+		display: flex
+		margin-right: -18px
+		margin-left: -18px
+		padding: 0 18px
+		overflow: auto hidden
+		margin-bottom: 30px
+		&:after
+			content: ''
+			width: 18px
+			flex-shrink: 0
+			height: 18px
+	.block-info
+		width: 80%
+		flex-shrink: 0
+		min-height: 0 !important
+		&.big
+			.block-info-text
+				.h3
+					font-size: 18px
+					margin-bottom: 30px
+				p
+					font-size: 12px
+	.block-info-chess-item-text p.big-text
+		font-size: 16px
+	.block-info-chess-item
+		margin-bottom: 30px
+	.block-info-img-with-list-grid
+		display: flex
+		margin-right: -18px
+		margin-left: -18px
+		padding: 0 18px
+		overflow: auto hidden
+		margin-bottom: 30px
+		width: auto
+		&:after
+			content: ''
+			width: 18px
+			flex-shrink: 0
+			height: 18px
+		&.type-3
+			margin-left: 0 !important
+			margin-right: 0 !important
+			padding-left: 0 !important
+			padding-right: 0 !important
+			display: block
+			.block-info-type-3
+				width: 100%
+				flex-shrink: 0
+	.block-info-img-with-list
+		width: 80%
+		flex-shrink: 0
+		min-height: 0
+	.block-info-title+.block-info-grid.type-2
+		margin-top: 25px
+	.block-info-title+.block-info-img-with-list-grid
+		margin-top: 25px
+	.block-info-type-3
+		width: 80%
+		flex-shrink: 0
+	.block-info-big-text
+		display: block
+	.block-info-text-imgleft
+		display: block
+	.block-info-text-imgleft-img
+		margin-bottom: 20px
+		width: 100%
+		img
+			width: 100%
+			object-fit: cover
+	.block-info-text-imgleft-text
+		width: 100%
+	.block-info-card
+		width: 80%
+		flex-shrink: 0
+	.block-info-img-with-list-grid
+		&.type-4
+			padding-bottom: 30px
+	.global-info-navigation-block
+		[class*=col-]
+			& > div:last-child
+				margin-bottom: 0
+	.layout-image
+		min-height: 0
+	.menu
+		width: 100%
+
+
+
 
 /*==========  Mobile First  ==========*/
 

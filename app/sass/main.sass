@@ -133,10 +133,26 @@ section
 		border: 1px solid #9595A1
 		line-height: rem(54px)
 		color: $text
+		overflow: hidden
+		position: relative
+		z-index: 1
 		&:hover
 			border-color: $accent
 			color: #fff
+			&:after
+				transform: scaleX(1)
+		&:after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
 			background-color: $accent
+			z-index: -1
+			transform: scaleX(0)
+			+tr
+			transform-origin: center left
 	.loader
 		width: rem(30px)
 		height: rem(30px)
@@ -214,7 +230,7 @@ section
 	margin-left: auto
 	display: flex
 	align-items: center
-	margin-right: rem(43px)
+	margin-right: rem(91px)
 	position: relative
 
 .menu-link
@@ -250,6 +266,10 @@ section
 
 .header-burger
 	display: flex
+	position: fixed
+	z-index: 10
+	right: rem(40px)
+	top: rem(60px)
 
 .burger-icon
 	display: inline-block
@@ -257,6 +277,11 @@ section
 	height: rem(10px)
 	position: relative
 	flex-shrink: 0
+	&.dark
+		span
+			&:after,
+			&:before
+				background-color: #000
 	span
 		&:after,
 		&:before
@@ -858,6 +883,7 @@ section
 .stocks-nav
 	display: flex
 	align-items: center
+	margin-top: auto
 	.slider-nav-arrow
 		position: relative
 		top: auto !important
@@ -955,7 +981,6 @@ section
 		+tr
 
 .stick
-	display: inline-block
 	height: rem(30px)
 	position: relative
 	z-index: 2
@@ -968,6 +993,9 @@ section
 	font-weight: 500
 	line-height: rem(30px)
 	color: $text
+	display: inline-flex
+	align-items: center
+	flex-shrink: 0
 	&.black
 		background-color: #171723
 		color: #fff
@@ -979,6 +1007,13 @@ section
 		border: 1px solid #fff
 		color: #fff
 		line-height: rem(28px)
+	&.accent
+		background-color: $accent
+		color: #fff
+	span
+		font-size: rem(16.5px)
+		color: #9595A1
+		margin-left: rem(7px)
 
 .news-date
 	color: #9595A2
@@ -1899,6 +1934,7 @@ section
 	align-items: center
 	justify-content: center
 	padding: rem(15px) 0
+	min-height: rem(587px)
 	.slick-current
 		img
 			transform: none
@@ -1964,16 +2000,25 @@ section
 			color: $accent
 
 .layout-info-slider
+	flex-grow: 1
+	max-width: 404px
 	.slick-current
 		.layout-info
 			transform: translateX(0)
 	.slick-list
 		overflow: visible !important
+		height: 100% !important
+	.slick-track
+		height: 100%
 
 .layout-info
 	font-weight: normal
+	height: 100%
 	+tr
 	transform: translateX(-#{rem(30px)})
+	display: flex !important
+	align-items: flex-start
+	flex-direction: column
 	.h3
 		margin-bottom: rem(10px)
 	ul
@@ -1995,6 +2040,9 @@ section
 				height: rem(4px)
 				background-color: $accent
 				border-radius: 50%
+	.btn
+		width: 100%
+		margin-bottom: rem(20px)
 
 .layout-price
 	font-size: rem(20px)
@@ -2370,9 +2418,9 @@ section
 		*
 			transition: all .4s ease
 		.replace-stroke
-			stroke: var(--global-accent-color)
+			stroke: $accent
 		.replace-fill
-			fill: var(--global-accent-color)
+			fill: $accent
 	img
 		position: relative
 		z-index: 1
@@ -3046,7 +3094,7 @@ form
 .main-window-global-info
 	flex-grow: 1
 	color: #fff
-	padding-right: rem(130px)
+	padding-right: rem(170px)
 	padding-left: rem(20px)
 
 .main-window-global-info-title
@@ -3172,7 +3220,7 @@ form
 	.slick-list
 		overflow: visible
 	.slider-next
-		right: calc(100% + #{rem(42px)})
+		right: calc(100% + 42px)
 		position: absolute
 		top: 50%
 		transform: translateY(-50%)
@@ -3188,7 +3236,7 @@ form
 				animation-timing-function: linear
 	.slider-prev
 		position: absolute
-		right: calc(100% + #{rem(95px)})
+		right: calc(100% + 95px)
 		position: absolute
 		top: 50%
 		transform: translateY(-50%)
@@ -3297,6 +3345,7 @@ form
 	margin-bottom: rem(25px)
 	margin-right: rem(58px)
 	max-width: 360px
+	width: 100%
 
 .layout-info-list-item
 	display: flex
@@ -3316,25 +3365,35 @@ form
 
 .s-master-plan
 	position: relative
+	padding-top: 52px
 
 .master-plan-img
+	position: relative
 	img
 		width: 100%
 		display: block
+	.btn
+		position: absolute
+		top: rem(40px)
+		right: rem(40px)
+		z-index: 1
 
 .master-plan-header
-	position: absolute
-	top: rem(40px)
-	left: 0
-	width: 100%
-	z-index: 1
-	color: #fff
-	.container
-		display: flex
+	margin-bottom: 34px
 	.h2
-		flex-grow: 1
-		margin-right: rem(20px)
 		font-weight: normal
+		margin: 0
+
+.cardinal-points
+	display: flex
+	align-items: center
+	justify-content: center
+	position: absolute
+	right: rem(62px)
+	bottom: rem(62px)
+	img
+		width: 77px
+		flex-shrink: 0
 
 .s-photos
 	position: relative
@@ -3397,7 +3456,7 @@ form
 				img
 					opacity: 1
 	.slider-next
-		right: calc(100% + #{rem(42px)})
+		right: calc(100% + 42px)
 		position: absolute
 		top: 50%
 		transform: translateY(-50%)
@@ -3418,7 +3477,7 @@ form
 				fill: rgba(#fff, .3)
 	.slider-prev
 		position: absolute
-		right: calc(100% + #{rem(95px)})
+		right: calc(100% + 95px)
 		position: absolute
 		top: 50%
 		transform: translateY(-50%)
@@ -3584,5 +3643,888 @@ form
 	width: 100%
 	height: 100%
 	z-index: 3
+
+.s-rescom-advantages
+	padding: rem(82px) 0 rem(77px)
+	position: relative
+	z-index: 1
+	&:before
+		content: ''
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: $accent
+		z-index: -1
+		opacity: 0.06
+
+.rescom-advantages-grid
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	grid-gap: rem(55px) rem(85px)
+
+.rescom-advantages-item
+	&:hover
+		.rescom-advantages-icon
+			&:after
+				border-radius: rem(15px) 50% rem(15px) 50%
+
+.rescom-advantages-icon
+	display: inline-block
+	position: relative
+	width: rem(81px)
+	height: rem(81px)
+	display: flex
+	align-items: center
+	justify-content: center
+	margin-bottom: rem(38px)
+	&:after
+		content: ''
+		position: absolute
+		bottom: rem(-20px)
+		right: rem(-30px)
+		background-color: $accent
+		opacity: 0.12
+		width: rem(77px)
+		height: rem(77px)
+		border-radius: 50% rem(15px) 50% rem(15px)
+		+tr
+	svg
+		max-width: 81px
+		max-height: 81px
+		flex-shrink: 0
+		position: relative
+		z-index: 1
+		.replace-stroke
+			stroke: $accent
+		.replace-fill
+			fill: $accent
+
+.rescom-advantages-title
+	font-size: rem(26px)
+	font-weight: normal
+	line-height: 1.461
+	max-width: rem(325px)
+
+.s-position
+	padding: rem(70px) 0 rem(88px)
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: top 0 right 0
+	.section-title
+		.h2
+			margin-bottom: rem(40px)
+
+.position-info
+	margin-bottom: rem(120px)
+
+.position-info-content
+	max-width: rem(746px)
+	p
+		margin-bottom: rem(32px)
+		font-size: rem(26px)
+		line-height: 1.461
+		font-weight: normal
+		a
+			color: $accent !important
+			text-decoration: none !important
+			position: relative
+			&:after
+				content: ''
+				position: absolute
+				bottom: 0
+				left: 0
+				width: 100%
+				height: 1px
+				background-color: $accent
+				+tr
+			&:hover
+				&:after
+					width: 70%
+	ul
+		list-style-type: none
+		padding: 0
+		margin: 0
+		font-size: rem(20px)
+		li
+			font-weight: normal
+			margin-bottom: rem(15px)
+			&:last-child
+				margin-bottom: 0
+			span
+				font-weight: 600
+
+.slick-track
+	margin-left: 0
+	margin-right: 0
+
+.position-slider
+	.news-item
+		min-height: rem(254px)
+
+.s-global-info
+	padding-top: rem(260px)
+	overflow: visible
+	.text-slider-wrapper
+		margin-bottom: rem(78px)
+		overflow: hidden
+
+.global-info-nav
+	display: flex
+	align-items: flex-start
+	flex-direction: column
+	position: sticky
+	top: rem(30px)
+
+.global-info-nav-link
+	+tr
+	font-size: rem(16px)
+	color: $text
+	text-decoration: none !important
+	margin: 0 0 rem(8px)
+	position: relative
+	display: inline-block
+	&:after
+		content: ''
+		position: absolute
+		left: -#{rem(17px)}
+		border-radius: 50%
+		width: rem(7px)
+		height: rem(7px)
+		background-color: $accent
+		top: rem(7px)
+		+tr
+		transform: translate3d(#{rem(17px)}, 0, 0)
+		opacity: 0
+		+tr
+	&:hover,
+	&.active
+		color: $accent
+		&:after
+			opacity: 1
+			transform: none
+	&.skip
+		margin-top: rem(37px)
+		display: flex
+		align-items: center
+		span
+			font-size: rem(9px)
+			margin-left: rem(6px)
+
+.block-info-grid
+	display: grid
+	grid-gap: 33px 30px
+	grid-template-columns: repeat(3, 1fr)
+	margin-bottom: rem(100px)
+	.block-info-title
+		grid-column: span 3
+
+.block-info
+	width: 100%
+	position: relative
+	min-height: rem(275px)
+	.stick
+		margin-bottom: rem(20px)
+		margin-right: auto
+	&:hover
+		.block-info-img
+			img
+				transform: scale(1.05)
+	&.big
+		grid-column: span 3
+		min-height: rem(614px)
+		.block-info-text
+			.h3
+				margin-top: 0
+				margin-bottom: auto
+				font-size: rem(80px)
+				font-weight: normal
+			p
+				font-size: rem(26px)
+				line-height: 1.461
+				max-width: rem(821px)
+				font-weight: normal
+	&.medium
+		grid-column: span 2
+	&.type-2
+		min-height: rem(502px)
+		.block-info-text
+			.h3
+				font-size: rem(28px)
+				max-width: rem(493px)
+
+.block-info-img
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	border-radius: rem(10px)
+	overflow: hidden
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: linear-gradient(59.86deg, rgba(0, 0, 0, 0.51) 40.04%, rgba(0, 0, 0, 0) 100.61%)
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+		+tr
+		border-radius: rem(10px)
+
+.block-info-text
+	position: relative
+	display: flex
+	flex-direction: column
+	z-index: 2
+	color: #fff
+	padding: rem(32px) rem(34px)
+	height: 100%
+	.h3
+		font-size: rem(32px)
+		max-width: rem(280px)
+		margin-top: auto
+
+.block-info-chess
+	margin-bottom: rem(6px)
+
+.block-info-chess-item
+	display: flex
+	margin: 0 rem(-15px) rem(94px)
+	&:nth-child(even)
+		flex-direction: row-reverse
+
+.block-info-chess-item-text
+	padding: rem(60px) rem(15px) 0
+	width: 50%
+	flex-shrink: 0
+	font-size: rem(20px)
+	font-weight: normal
+	.h2
+		margin-bottom: rem(40px)
+	p
+		margin-bottom: rem(30px)
+		&.big-text
+			font-size: rem(26px)
+	.btn
+		margin-top: rem(50px)
+	ul
+		list-style-type: none
+		padding: 0
+		margin: 0 0 rem(20px)
+		li
+			position: relative
+			margin-bottom: rem(18px)
+			padding-left: rem(16px)
+			&:after
+				content: ''
+				width: 6px
+				height: 6px
+				border-radius: 50%
+				position: absolute
+				left: 0
+				top: rem(10px)
+				background-color: $accent
+
+.block-info-chess-item-img
+	flex-shrink: 0
+	width: 50%
+	padding: 0 rem(15px)
+	img
+		width: 100%
+		border-radius: 10px
+
+.block-info-big-banner
+	position: relative
+	margin-bottom: rem(50px)
+	&:hover
+		.block-info-big-banner-img
+			img
+				transform: scale(1.05)
+
+.block-info-big-banner-img
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	border-radius: rem(10px)
+	overflow: hidden
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+		+tr
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: linear-gradient(61.61deg, #000000 -49.72%, rgba(0, 0, 0, 0) 65.99%)
+
+.block-info-big-banner-text
+	position: relative
+	z-index: 1
+	color: #fff
+	padding: rem(70px) rem(74px) rem(62px)
+	> *
+		max-width: rem(559px)
+	.h1
+		font-weight: normal
+		margin-bottom: rem(38px)
+		line-height: .9
+	p
+		margin: 0
+		font-size: rem(26px)
+		font-weight: normal
+		line-height: 1.45
+
+.block-info-leftright-text
+	margin-bottom: rem(100px)
+	display: grid
+	grid-template-columns: 1fr 1fr
+	grid-gap: rem(30px)
+	font-size: rem(20px)
+	font-weight: normal
+	p
+		margin: 0
+		max-width: rem(553px)
+	.block-info-title
+		grid-column: span 2
+
+.block-info-icontext
+	display: flex
+	margin-left: rem(75px)
+	.rescom-advantages-icon
+		margin-right: rem(60px)
+		margin-top: rem(-18px)
+	p
+		max-width: rem(321px)
+
+.block-info-title
+	margin-bottom: rem(15px)
+	.h2
+		font-weight: normal
+		margin: 0
+	& + .block-info-grid.type-2
+		margin-top: rem(50px)
+	& + .block-info-img-with-list-grid
+		margin-top: rem(50px)
+
+
+.big-text
+	font-size: rem(26px)
+
+.block-info-img-with-list-grid
+	display: grid
+	grid-template-columns: repeat(2, 1fr)
+	grid-gap: rem(30px)
+	grid-auto-rows: 1fr
+	margin-bottom: rem(100px)
+	// width: 100%
+	min-width: 0
+	.block-info-title
+		grid-column: span 2
+	&.no-auto-row
+		grid-auto-rows: auto
+
+.block-info-img-with-list
+	position: relative
+	z-index: 1
+	color: #fff
+	&:hover
+		.block-info-img-with-list-img
+			img
+				transform: scale(1.05)
+
+.block-info-img-with-list-img
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	border-radius: rem(10px)
+	overflow: hidden
+	z-index: -1
+	img
+		display: block
+		width: 100%
+		height: 100%
+		object-fit: cover
+		+tr
+		border-radius: rem(10px)
+	&:after
+		content: ''
+		position: absolute
+		z-index: 1
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: linear-gradient(47.36deg, rgba(0, 0, 0, 0.35) 85.4%, rgba(0, 0, 0, 0) 104.78%)
+
+.block-info-img-with-list-text
+	padding: rem(34px) rem(34px) rem(78px) rem(43px)
+	color: #fff
+	font-weight: normal
+	font-size: rem(20px)
+	line-height: 1.35
+	ul
+		list-style-type: none
+		padding: 0
+		margin: 0
+		max-width: rem(302px)
+	li
+		position: relative
+		margin-bottom: rem(10px)
+		padding-left: rem(17px)
+		&:after
+			content: ''
+			position: absolute
+			width: rem(6px)
+			height: rem(6px)
+			border-radius: 50%
+			background-color: #fff
+			left: 0
+			top: rem(11px)
+		&:last-child
+			margin-bottom: 0
+
+.block-info-type-3
+	width: 100%
+	flex-shrink: 0
+	min-width: 0
+	.h2
+		margin-bottom: rem(40px)
+
+.block-info-type-3-img
+	width: 100%
+	border-radius: rem(10px)
+	overflow: hidden
+	margin-bottom: rem(40px)
+	img
+		width: 100%
+	.slider-nav-arrow
+		position: absolute
+		bottom: rem(32px)
+		z-index: 1
+	.slider-next
+		right: 13px
+		span
+			color: #fff
+		svg
+			circle
+				stroke: #fff
+		&:after
+			border-color: #fff
+			background-color: rgba(#fff, .3)
+	.slider-prev
+		right: 62px
+		span
+			color: #fff
+
+.block-info-type-3-text
+	font-weight: normal
+	.mute-text
+		margin-bottom: rem(21px)
+		font-size: rem(20px)
+		color: #9595A1
+		text-transform: uppercase
+	p
+		margin-bottom: rem(18px)
+		font-size: rem(26px)
+		line-height: 1.451
+	.btn
+		margin-top: rem(12px)
+	.red
+		color: #D90002
+	> *:last-child
+		margin-bottom: 0 !important
+
+.block-info-big
+	margin-bottom: rem(93px)
+	.h2
+		margin-bottom: rem(43px)
+	img
+		width: 100%
+		border-radius: rem(10px)
+		display: block
+		margin-bottom: rem(49px)
+
+.block-info-big-text
+	display: grid
+	grid-template-columns: repeat(2, 1fr)
+	grid-gap: 30px
+	.block-info-type-3-text
+		p
+			max-width: rem(495px)
+
+.block-info-nmbrs
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	grid-gap: rem(30px)
+	margin-top: rem(27px)
+
+.block-info-nmbrs-item-qnt
+	font-size: rem(62px)
+	line-height: 1
+	font-weight: 500
+	margin-bottom: rem(5px)
+
+.block-info-nmbrs-item-title
+	max-width: rem(160px)
+	.red
+		color: $red
+
+.block-info-text-imgleft
+	display: flex
+	align-items: center
+	margin: 0 rem(-15px) rem(100px)
+
+.block-info-text-imgleft-img
+	width: 50%
+	padding: 0 rem(15px)
+	flex-shrink: 0
+	img
+		width: 100%
+		border-radius: rem(10px)
+
+.block-info-text-imgleft-text
+	width: 50%
+	padding: 0 rem(15px) 0 rem(65px)
+	flex-shrink: 0
+	font-size: rem(26px)
+	line-height: 1.451
+	font-weight: normal
+	.h2
+		margin-bottom: rem(42px)
+	.red
+		color: $red
+	p
+		max-width: rem(480px)
+
+.block-info-card
+	border-radius: rem(10px)
+	background-color: #fff
+	overflow: hidden
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08)
+
+.block-info-card-header
+	position: relative
+	display: flex
+	flex-direction: column
+	height: rem(353px)
+	z-index: 1
+	align-items: flex-start
+	padding: rem(28px) rem(36px) rem(32px)
+	color: #fff
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: linear-gradient(15.64deg, rgba(0, 0, 0, 0.35) 1.21%, rgba(196, 196, 196, 0) 55.55%, rgba(0, 0, 0, 0) 55.55%)
+		z-index: -1
+	img
+		position: absolute
+		z-index: -2
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		object-fit: cover
+	.h3
+		max-width: rem(468px)
+
+.block-info-card-body
+	font-size: rem(20px)
+	font-weight: normal
+	padding: rem(40px) rem(81px) rem(64px) rem(37px)
+	> *:last-child
+		margin-bottom: 0
+
+.layout-investments
+	margin-top: auto
+	border-radius: rem(7px)
+	border: 1px solid #D6D6DA
+	padding: rem(22px) rem(25px) rem(25px)
+	width: calc(100% - 1px)
+	background-image: url(../img/diagram-bg.svg)
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: right 0 bottom 0
+	.h6
+		font-size: rem(18px)
+		margin-bottom: rem(17px)
+		font-weight: 500
+	p
+		font-size: rem(14px)
+		line-height: 1.3
+		max-width: rem(280px)
+
+.layout-investments-footer
+	display: flex
+	align-items: flex-end
+
+.layout-investments-price
+	display: flex
+	align-items: center
+	flex-grow: 1
+	padding-right: rem(20px)
+	white-space: nowrap
+
+.layout-investments-price-res
+	font-weight: 600
+	margin-right: rem(10px)
+	letter-spacing: -.02em
+	font-size: rem(24px)
+
+.layout-investments-price-percent
+	height: rem(25px)
+	line-height: rem(25px)
+	border-radius: rem(7px)
+	padding: 0 rem(6px)
+	font-size: rem(16px)
+	letter-spacing: -.02em
+	font-weight: bold
+	background-color: $accent
+	color: #fff
+
+.layout-investments-footer
+	padding-right: rem(45px)
+
+.layout-investments-link
+	position: absolute
+	z-index: 1
+	background-color: #fff
+	width: rem(35px)
+	height: rem(35px)
+	right: rem(20px)
+	bottom: rem(20px)
+	border-radius: 50%
+	&:after,
+	&:before
+		content: ''
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		background-color: $text
+	&:after
+		width: 2px
+		height: rem(16px)
+	&:before
+		height: 2px
+		width: rem(16px)
+
+.other-projects-item
+	position: relative
+	&:hover
+		.other-projects-item-img
+			img
+				transform: scale(1.05)
+
+.other-other-projects-item-link
+	position: absolute
+	z-index: 1
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+
+.other-projects-item-img
+	position: relative
+	padding-bottom: 63.66%
+	border-radius: rem(10px)
+	margin-bottom: rem(22px)
+	.other-projects-item-img-block
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		border-radius: rem(10px)
+		object-fit: cover
+		border-radius: rem(10px)
+		overflow: hidden
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+			border-radius: rem(10px)
+			+tr
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 44.03%, rgba(0, 0, 0, 0.5) 100%)
+		border-radius: rem(10px)
+	.stick
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 1
+		top: rem(13px)
+		left: rem(16px)
+	.project-price
+		position: absolute
+		right: rem(20px)
+		bottom: rem(17px)
+		z-index: 1
+		margin: 0
+	.project-price-val
+		color: #fff
+	.project-price-info-icon
+		color: rgba(#fff, .5)
+
+.menu
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 500
+	// background: linear-gradient(94.28deg, rgba(255, 255, 255, 0.4) -592.16%, rgba(255, 255, 255, 0) 101.05%)
+	background-color: rgba(#000, .2)
+	backdrop-filter: blur(60px)
+	transition: all .5s ease
+	transform: translateY(-120%)
+	.container
+		position: relative
+	&.opened
+		transform: translateY(0)
+		.menu-list-big,
+		.menu-body-item-title,
+		.menu-list
+			transform: translateX(0)
+		.menu-body-item
+			&:after
+				transform: scaleY(1)
+
+.menu-header
+	position: fixed
+	top: rem(36px)
+	left: 0
+	width: 100%
+	z-index: 1
+	.container
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+.close-menu-btn
+	font-size: rem(24px)
+	color: #fff !important
+	text-decoration: none !important
+	+tr
+	display: flex
+	span
+		display: flex
+	&:hover
+		transform: rotate(180deg)
+
+.menu-body
+	display: flex
+
+.menu-body-item
+	width: 25%
+	flex-shrink: 0
+	padding: rem(123px) rem(57px) rem(82px)
+	font-weight: normal
+	color: #fff
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		bottom: 0
+		right: 0
+		width: 1px
+		height: 100%
+		background-color: rgba(255, 255, 255, 0.15)
+		transition: all .85s ease
+		transform-origin: left bottom
+		transform: scaleY(0)
+	&:nth-child(1)
+		padding-left: rem(64px)
+	&:nth-child(2)
+		.menu-body-item-title,
+		.menu-list
+			transition-delay: .6s
+		&:after
+			transition-delay: .15s
+	&:nth-child(3)
+		.menu-body-item-title,
+		.menu-list
+			transition-delay: .7s
+		&:after
+			transition-delay: .3s
+	&:nth-child(4)
+		border: none
+		padding-right: rem(64px)
+		.menu-body-item-title,
+		.menu-list
+			transition-delay: .8s
+		&:after
+			transition-delay: .45s
+
+.menu-list-big
+	display: flex
+	flex-direction: column
+	align-items: flex-start
+	transform: translateX(-100%)
+	transition: all .85s ease
+	transition-delay: .40s
+	a
+		font-size: rem(28px)
+		color: #fff !important
+		text-decoration: none !important
+		margin-bottom: rem(23px)
+		+tr
+		&:hover
+			opacity: 0.7
+			transform: translateX(5px)
+		&:last-child
+			margin-bottom: 0
+
+.menu-body-item-title
+	font-size: rem(28px)
+	margin-bottom: rem(31px)
+	transition: all .85s ease
+	transform: translateX(-100%)
+
+.menu-list
+	display: flex
+	flex-direction: column
+	align-items: flex-start
+	transition: all .85s ease
+	transform: translateX(-100%)
+	&.hovered
+		a
+			opacity: 0.3
+	a
+		font-size: rem(20px)
+		color: #fff	!important
+		text-decoration: none !important
+		+tr
+		padding-bottom: rem(15px)
+		opacity: 0.7
+		&:last-child
+			padding-bottom: 0
+		&:hover
+			opacity: 1
+
+.menu-body-item-wrapper
+	overflow: hidden
 
 @import "media" // Always at the end
