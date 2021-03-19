@@ -3,6 +3,13 @@
 
 /*==========  Desktop First  ==========*/
 
+@media (max-width: 1599.98px)
+	.global-info-nav-link
+		&:after
+			width: 5px
+			height: 5px
+			margin-top: -3px
+
 @media (max-width: 1440px)
 	html, body
 		font-size: 12px
@@ -10,6 +17,13 @@
 		width: 158px
 	.about-in-nmbrs-item
 		margin-right: 40px
+
+@media (max-width: 1365.98px)
+	.res-complex-descr-text
+		p
+			font-size: 16px
+			&.big-text
+				font-size: 20px
 
 @media (max-width: 1280px)
 	.h2, h2
@@ -22,7 +36,6 @@
 		font-size: 18px
 	.contacts-form-success
 		padding: 30px
-
 
 // ≥1200px
 +media-breakpoint-down(lg)
@@ -334,6 +347,55 @@
 		font-size: 16px
 	.menu-list a
 		font-size: 12px
+	.sales-offices
+		display: block
+	.sales-offices-nav
+		padding-right: 0
+		display: flex
+		flex-direction: row
+		width: auto
+		overflow: auto hidden
+		margin-left: -20px
+		margin-right: -20px
+		padding-left: 20px
+		padding-right: 20px
+		margin-bottom: 15px
+		&::-webkit-scrollbar
+			display: none
+		&:after
+			content: ''
+			width: 20px
+			height: 20px
+			flex-shrink: 0
+	.sales-offices-nav-item
+		flex-shrink: 0
+	.sales-offices-map
+		overflow: visible
+	.sales-offices-map-balloon
+		position: fixed
+		border-radius: 0
+		top: 0
+		left: 0
+		width: 300px
+		height: 100%
+		max-height: none
+		z-index: 50
+		margin: 0
+		box-shadow: 1px 4px 19px rgba(0, 0, 0, .09)
+		opacity: 1
+		visibility: visible
+		transform: translateX(-110%)
+	.sales-offices-map-balloon-content
+		display: flex
+		flex-direction: column
+		.btn
+			margin-top: auto
+	.sales-offices-map-wrapper
+		margin-left: 0
+		height: 350px
+	.sales-offices-map
+		border-radius: 10px
+		overflow: hidden
 
 // ≥992px
 +media-breakpoint-down(md)
@@ -536,6 +598,16 @@
 				max-width: none
 			.stocks-nav
 				margin-top: 0
+	.page-title
+		margin-bottom: 30px
+		.h1
+			margin-bottom: 0
+	.s-contacts-type-2 .contacts-list
+		padding-left: 0
+	.page-content
+		padding-top: 120px
+	.sales-offices-contacts
+		margin-bottom: 30px
 
 // ≥768px
 +media-breakpoint-down(sm)
@@ -762,6 +834,30 @@
 		right: 20px
 	.header-phone
 		margin-right: 30px
+	.block-info-img-with-list-grid
+		&.type-3
+			margin-left: -5px
+			margin-right: 0
+			.block-info-type-3
+				padding-left: 0
+				padding-right: 0
+	.block-info-img-with-list-grid
+		&.type-3
+			margin-left: 0
+			margin-right: 0
+			display: block
+			.block-info-type-3
+				padding-left: 0
+				padding-right: 0
+				width: 100%
+				margin-bottom: 30px
+	.block-info-chess-item
+		margin-left: 0 !important
+		margin-right: 0 !important
+	.block-info-chess-item-text,
+	.block-info-chess-item-img
+		padding-left: 0 !important
+		padding-right: 0 !important
 
 // ≥576px
 +media-breakpoint-down(xs)
@@ -787,6 +883,7 @@
 		display: block
 	.main-window-slider-item .h2
 		margin-bottom: 27px
+		font-size: 17px
 	.main-window-slider-btns
 		flex-direction: column
 		align-items: flex-start
@@ -1174,12 +1271,17 @@
 		.select2-container--default .select2-selection--single .select2-selection__arrow
 			height: 31px
 	.calculator-results
-		display: block
+		flex-wrap: wrap
+		justify-content: space-between
+		.btn
+			margin: 0
+			width: calc(50% - 5px)
 	.calcultator-total
 		margin-right: 0
 		display: flex
 		align-items: center
 		margin-bottom: 17px
+		width: 100%
 	.calcultator-total-price
 		font-size: 30px
 		margin-top: 0
@@ -1479,11 +1581,176 @@
 			& > div:last-child
 				margin-bottom: 0
 	.layout-image
-		min-height: 0
+		.slick-slide
+			min-height: 0
 	.menu
 		width: 100%
-
-
+	.photos-gallery
+		.slick-dots
+			display: flex !important
+	.photos-gallery-thumbs
+		display: none
+	.s-photos .section-title
+		position: static
+		color: $text
+		margin-bottom: 15px
+	.videos-item-big
+		grid-row: auto
+		grid-column: auto
+		min-height: 0
+	.videos-slider
+		display: flex
+		margin-left: -20px
+		margin-right: -20px
+		padding-left: 20px
+		padding-right: 20px
+		overflow: auto visible
+	.videos-slider-item-grid
+		display: flex
+		grid-gap: 0
+	.videos-item-big
+		flex-shrink: 0
+		width: 60vw
+		margin-right: 10px
+	.videos-item
+		flex-shrink: 0
+		width: 60vw
+		margin-right: 10px
+	.slider-live-in-rescom
+		padding-right: 80px
+		.slick-list
+			overflow: visible
+		.slick-slide.prev-slide
+			opacity: 1 !important
+			transform: none !important
+	.s-stocks .stocks-left .stocks-nav
+		margin-top: -7px
+	.block-info-grid
+		grid-gap: 0
+	.block-info
+		margin-right: 10px
+	.block-info-img-with-list-grid
+		grid-gap: 0
+	.block-info-img-with-list
+		margin-right: 10px
+	.block-info-type-3
+		margin-right: 10px
+	.block-info-card
+		margin-right: 10px
+	.page-title
+		h1, .h1
+			font-size: 30px
+	.contacts-data
+		display: block
+	.contacts-data-left
+		margin-right: 0
+		margin-bottom: 30px
+	.hide-on-desktop
+		opacity: 1
+		visibility: visible
+	.header.dark
+		.header-row>.header-phone a
+			border-color: rgba($text, .5)
+			&:after
+				color: $text
+	.small-stocks-title
+		display: none
+	.small-stocks-slider
+		padding-right: 90px
+		.small-stocks-title
+			display: block
+	.small-stocks-slider
+		.slider-prev
+			bottom: auto
+			top: 16px
+		.slider-next
+			bottom: auto
+			top: 16px
+			right: 0
+	.res-complex-descr-videos
+		margin-bottom: 30px
+		.row
+			flex-wrap: nowrap
+			overflow: auto hidden
+			margin-left: -20px
+			margin-right: -20px
+			padding-left: 20px
+			padding-right: 20px
+			[class*=col-]
+				max-width: 80%
+				flex: 0 0 80%
+				padding: 0
+				margin-right: 10px
+				&:last-child
+					margin-right: 0
+			&:after
+				content: ''
+				width: 20px
+				height: 20px
+				flex-shrink: 0
+	.rescom-advantages-icon
+		width: 50px
+		height: 50px
+		margin-bottom: 20px
+		&:after
+			width: 50px
+			height: 50px
+			bottom: -15px
+			right: -20px
+		svg
+			max-width: 50px
+			max-height: 50px
+	.rescom-advantages-title
+		font-size: 12px
+	.position-info
+		.section-title
+			display: flex
+			align-items: center
+			.h2
+				margin-bottom: 0
+				flex-grow: 1
+			.btn
+				width: 40px
+				height: 40px
+				font-size: 0
+				padding: 0
+				display: flex
+				align-items: center
+				justify-content: center
+				span
+					font-size: 16px
+					margin: 0
+	.slider-live-in-rescom
+		padding-right: 60vw
+		.slick-slide
+			opacity: 1 !important
+			padding: 0 5px
+	.live-in-rescom
+		.h4
+			font-size: 12px
+	.block-info-type-3-img
+		&.slick-slider
+			margin-left: -5px
+			margin-right: -5px
+			width: auto
+			border-radius: 7px !important
+			overflow: hidden
+			.slick-slide
+				border-radius: 7px !important
+				overflow: hidden
+				padding: 0 5px
+				img
+					border-radius: 7px
+	.global-info-blocks
+		overflow: visible
+	.block-info-img-with-list-grid.type-3
+		overflow: visible !important
+	.main-banner-video-item
+		transition: opacity .3s ease !important
+		transform: none !important
+		opacity: 0
+		&.active
+			opacity: 1
 
 
 /*==========  Mobile First  ==========*/
